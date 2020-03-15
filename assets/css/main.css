@@ -1649,3 +1649,16 @@ input, select, textarea {
 .social-network-section .fa-2x {
 	font-size: 20px;
 }
+
+.project-title {
+	padding-top: 16px;
+}
+
+.project-desc {
+	text-align: justify;
+}
+
+.groove-line-bar {
+	border: 1px groove;
+	margin: 0 24%;
+}
