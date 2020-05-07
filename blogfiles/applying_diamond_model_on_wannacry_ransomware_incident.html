@@ -1064,39 +1064,42 @@ body .markdown-body
 <p>In the diamond model, four main components are Adversary, Capability, Infrastructure, and the Victim.</p>
 <ol>
 <li>
-<p>Victim
-    The victim of this ransomware attack was mainly the organizations that did not install the April 2017 security patch for EternalBlue or were running unsupported or out-of-band systems like Windows XP, Windows Server 2003. According to Kaspersky Lab, the four most affected countries were Russia, Ukraine, India, and Taiwan.[3]</p>
+	<p><b>Victim</b></p>
+    <p>The victim of this ransomware attack was mainly the organizations that did not install the April 2017 security patch for EternalBlue or were running unsupported or out-of-band systems like Windows XP, Windows Server 2003. According to Kaspersky Lab, the four most affected countries were Russia, Ukraine, India, and Taiwan.[3]</p>
 <p>The victim personae included Health Care industry including mainly UK’s National Health Service (NHS), US Hospitals, Automobile industry including Nissan, Honda, Renault, Universities in China, FedEx, Government systems in India, Chinese Police, Russia including their banks, telecom providers, railway systems and the interior ministry.</p>
 <p>The victim assets included the systems that had a vulnerability in the SMB protocol (CVE-2017-0145) that was exploited by EternalBlue exploit.</p>
 </li>
 <li>
-<p>Capability
-    WannaCry is a ransomware crypto worm that targets Windows systems by encrypting data and demanding ransom payments of $300-$500 in Bitcoin. The worm is also known as WannaCrypt, Wana Decrypt0r 2.0, and Wanna Decryptor. It is considered a network worm as it propagates to other systems and infects them if they have the same SMB vulnerability. </p>
+<p><b>Capability</b></p>
+   <p> WannaCry is a ransomware crypto worm that targets Windows systems by encrypting data and demanding ransom payments of $300-$500 in Bitcoin. The worm is also known as WannaCrypt, Wana Decrypt0r 2.0, and Wanna Decryptor. It is considered a network worm as it propagates to other systems and infects them if they have the same SMB vulnerability. </p>
 <p>On reaching a system, it uses EternalBlue exploit using port 445 (SMB) to gain access and the DoublePulsar tool to install a backdoor and execute a copy of itself. WannaCry versions 0, 1 and 2 were created using Microsoft Visual C++ 6.0.</p>
 <p>EternalBlue is an exploit of Windows’ Server Message Block (SMB) protocol that was discovered by the NSA and stolen and released by Shadow Brokers. DoublePulsar is a backdoor tool that is used by WannaCry to install itself on any system. These both were released by the Shadow Brokers group in April 2017.</p>
 <p>WannaCry upon execution, unlike other ransomware strains, does not employ hibernation as a sandbox evasion technique. In a couple of seconds, the ransomware encrypts all directory contents on the system except those in the SystemRoot and Program Files. It does not encrypt the *.exe or *.dll file extensions. The product of the encryption process is files with the *.WNCRY extension. The ransomware comes with an implanted master RSA public key whose corresponding private key is retained by the attacker. Upon infection, the ransomware uses a secure PRNG function CryptGenRandom from the operating system CryptoAPI to generate a 2048-bit sub-RSA pair for use by the cryptographic service provider (CSP). The public key from this sub-pair is exported to 00000000.pky in unencrypted form. The private key thereof is exported and written to 00000000.eky after being encrypted by the implanted master RSA public key using the CryptEncrypt function. Further, a 128-bit AES key is generated in Cipher Block Chaining (CBC) mode for encryption of the victim’s target files, with a unique key per file. These symmetric keys are then encrypted by the earlier public key from the sub-pair which was exported to 00000000.pky.[4]</p>
 <p>In total, the ransomware operates on four encryption keys: one RSA public key from the master key pair, two keys from the payload-generated sub-RSA pair and one AES symmetric key. The AES key is only encrypted by the payload-generated sub-RSA public key upon completion of encrypting the victim’s targeted file extensions.</p>
 </li>
 <li>
-<p>Infrastructure
-    According to report by Malwarebytes, the ransomware was spread via an operation that hunts down vulnerable public facing SMB ports and then uses alleged NSA-leaked EternalBlue exploit to get on the network and then the DoublePulsar exploit to establish persistence and allow for the installation of the WannaCry Ransomware. Just a few thousand machines could have yielded a widespread distribution of WannaCry across the world.[2] This can constitute Type I Infrastructure as the attackers spread the initial attack by searching the vulnerable systems.</p>
+<p><b>Infrastructure</b></p>
+    <p>According to report by Malwarebytes, the ransomware was spread via an operation that hunts down vulnerable public facing SMB ports and then uses alleged NSA-leaked EternalBlue exploit to get on the network and then the DoublePulsar exploit to establish persistence and allow for the installation of the WannaCry Ransomware. Just a few thousand machines could have yielded a widespread distribution of WannaCry across the world.[2] This can constitute Type I Infrastructure as the attackers spread the initial attack by searching the vulnerable systems.</p>
 <p>According to a report by Foxit, the ransomware spread was spread by leveraging social engineering attacks via an email containing a link or a PDF file with payload, which if clicked, installs WannaCry on the targeted system. This can constitute Type II Infrastructure as the email was sent by compromised accounts as in the normal case of spam emails.</p>
 <p>EternalBlue allows malicious code to spread through structures set up to share files between systems. In this way, the ransomware spread so fast using the loophole in the file-sharing protocol. The ransomware tried to connect to a domain initially which was discovered by a researcher. The domain was hxxp://www[.]iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea[.]com.[1] The ransomware first tries to connect the following domain and if not found then it goes on infecting the system. The domain constitutes as Type I Infrastructure probably owned by the attacker.</p>
 </li>
 <li>
-<p>Adversary
-    The ransomware was analyzed by several security groups and researchers. Linguistic analysis of the ransom notes indicated the authors were fluent in Chinese and proficient in English. According to an analysis by the FBI’s Cyber Behavioral Analysis Center, the computer that created the ransomware files had Hangul language fonts installed. Metadata in the file also indicated that the computers were set to UTC+09:00, used in Korea.</p>
+<p><b>Adversary</b></p>
+    <p>The ransomware was analyzed by several security groups and researchers. Linguistic analysis of the ransom notes indicated the authors were fluent in Chinese and proficient in English. According to an analysis by the FBI’s Cyber Behavioral Analysis Center, the computer that created the ransomware files had Hangul language fonts installed. Metadata in the file also indicated that the computers were set to UTC+09:00, used in Korea.</p>
 <p>A Google security researcher, Kaspersky Lab, and Symantec all three found code similarities between WannaCry ransomware and a previous malware that was used by Lazarus Group, in Sony hacks and Bangladesh bank heist, that was linked to North Korea. </p>
 <p>On 18 December 2017, the United States Government formally announced that it publicly considers North Korea to be the main culprit behind the WannaCry attack. Along with the US, Canada, New Zealand, Japan, and the United Kingdom also agreed with the United States’ assessment of the evidence that links the attack to North Korea.</p>
 <p>On 6 September 2018, the US Department of Justice (DoJ) announced formal charges against Park Jin-hyok for involvement in the Sony Pictures hack of 2014 and WannaCry attack among other activities. The DoJ contended that Park was a North Korean hacker working as a part of a team of experts for the North Korean Reconnaissance General Bureau.</p>
 </li>
 </ol>
 <p>We move on to talk about the Social-Political meta feature and Technology meta feature of the extended Diamond Model.
-- Social-Political Meta Feature
-From the analysis of the WannaCry ransomware, it can be stated that the intent of the attackers was monetary gain. They were not behind the data of any organization. The ransomware demanded $300-$500 in Bitcoins. As of June 2017, after the attack had subsided, a total of 327 payments by the victims totaling US$130,634.77 had been transferred to the attackers using the bitcoin addresses stated in the ransomware. Even after the payment, the victims did not get back their data and this encourages more of such ransomware campaigns because of the high revenues. According to cyber-risk-modeling firm Cyence, economic losses from the cyber-attack could reach up to US$4 billion</p>
 <ul>
-<li>Technology Meta Feature
-From the analysis of the WannaCry ransomware, it uses technologies like resolving domain over HTTP (the initial domain check), IP and File Sharing protocol to spread across a network searching for SMB vulnerability, utilizing mail servers to propagate spam emails containing the ransomware.</li>
+<li>
+<p><b>Social-Political Meta Feature</b></p>
+<p>From the analysis of the WannaCry ransomware, it can be stated that the intent of the attackers was monetary gain. They were not behind the data of any organization. The ransomware demanded $300-$500 in Bitcoins. As of June 2017, after the attack had subsided, a total of 327 payments by the victims totaling US$130,634.77 had been transferred to the attackers using the bitcoin addresses stated in the ransomware. Even after the payment, the victims did not get back their data and this encourages more of such ransomware campaigns because of the high revenues. According to cyber-risk-modeling firm Cyence, economic losses from the cyber-attack could reach up to US$4 billion</p></li>
+
+<li>
+<p><b>Technology Meta Feature</b></p>
+<p>From the analysis of the WannaCry ransomware, it uses technologies like resolving domain over HTTP (the initial domain check), IP and File Sharing protocol to spread across a network searching for SMB vulnerability, utilizing mail servers to propagate spam emails containing the ransomware.</li>
 </ul>
 <p>Activity Thread in this cyber incident would be as:
 <p>Event 1 – The adversary conducts searches for all public-facing vulnerable SMB ports. (Actual)</p>
