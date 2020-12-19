@@ -11,7 +11,7 @@ Microsoft had already released patches to close this exploit, but most of the or
 
 In the diamond model, four main components are Adversary, Capability, Infrastructure, and the Victim.
 
-### Victim[](https://apurvsinghgautam.me/blogfiles/applying_diamond_model_on_wannacry_ransomware_incident.html#victim)
+### Victim
 
 The victim of this ransomware attack was mainly the organizations that did not install the April 2017 security patch for EternalBlue or were running unsupported or out-of-band systems like Windows XP, Windows Server 2003. According to Kaspersky Lab, the four most affected countries were Russia, Ukraine, India, and Taiwan.[3]
 
