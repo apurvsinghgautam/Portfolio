@@ -1,6 +1,5 @@
 # How to Start in Cybersecurity
 
-Tags: Portfolio Blogs
 
 To start a career in this field and become an expert you have to start learning on your own. You learn from your mistakes and gain more and more knowledge in this field while studying on your own.
 

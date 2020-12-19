@@ -1,7 +1,5 @@
 # Insights into Bitcoin Forensics
 
-Tags: LinkedIn Article, Portfolio Blogs
-URL: https://www.linkedin.com/pulse/insights-bitcoin-forensics-apurv-singh-gautam/
 
 Bitcoin is a cryptocurrency. It is an attempt to bring back a Decentralized currency for people that is not controlled by any central body. It works on peer to peer network using Blockchain technology.
 

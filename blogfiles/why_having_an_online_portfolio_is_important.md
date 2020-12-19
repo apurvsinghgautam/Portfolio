@@ -1,7 +1,5 @@
 # Why Having an Online Portfolio is Important?
 
-Tags: LinkedIn Article, Portfolio Blogs
-URL: https://www.linkedin.com/pulse/why-having-online-portfolio-important-apurv-singh-gautam/
 
 ![https://user-images.githubusercontent.com/20106707/82594677-76cdd780-9b72-11ea-831b-b15c2557d5b6.jpeg](https://user-images.githubusercontent.com/20106707/82594677-76cdd780-9b72-11ea-831b-b15c2557d5b6.jpeg)
 

@@ -1,7 +1,5 @@
 # How I Started my Journey in Cybersecurity
 
-Tags: LinkedIn Article, Portfolio Blogs
-URL: https://www.linkedin.com/pulse/how-i-started-my-journey-cybersecurity-apurv-singh-gautam/
 
 I was interested in hacking since I was in the 9th standard. I remember how I used to search online for hacking tricks, and I also bought one or two books of hacking by Ankit Fadia as I didn’t know much about the field. So I could say that my journey in this field started right here. At this point for me, cybersecurity was just hacking.
 

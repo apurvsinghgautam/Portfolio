@@ -1,6 +1,5 @@
 # Top Linux Commands
 
-Tags: Portfolio Blogs
 
 ![https://user-images.githubusercontent.com/20106707/78201132-d5be7c80-745e-11ea-9fc0-ec0bdaed5d2e.png](https://user-images.githubusercontent.com/20106707/78201132-d5be7c80-745e-11ea-9fc0-ec0bdaed5d2e.png)
 

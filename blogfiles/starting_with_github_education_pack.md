@@ -1,6 +1,5 @@
 # Starting with GitHub Education Pack
 
-Tags: Portfolio Blogs
 
 GitHub Student Pack is a suite of various developer tools suited for students who want to start in Web Development or is already in it. It contains tools that will be available for free for a limited time until you are student.
 

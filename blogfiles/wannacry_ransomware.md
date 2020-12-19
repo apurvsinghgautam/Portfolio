@@ -1,6 +1,5 @@
 # WannaCry Ransomware
 
-Tags: Portfolio Blogs
 
 Shadow Brokers is a hacker group that has leaked several NSA hacking tools and scripts to the public. Firstly when they got hands-on NSA tools they tried to auction it in the black market ranging from 2 to 200 Bitcoins, but the auction failed and then they leaked all the dump in public on Github.
 

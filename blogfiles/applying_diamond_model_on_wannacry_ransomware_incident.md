@@ -1,7 +1,5 @@
 # Applying Diamond Model on WannaCry Ransomware Incident
 
-Tags: LinkedIn Article, Portfolio Blogs
-URL: https://www.linkedin.com/pulse/applying-diamond-model-wannacry-ransomware-incident-gautam/
 
 ## Introduction
 
