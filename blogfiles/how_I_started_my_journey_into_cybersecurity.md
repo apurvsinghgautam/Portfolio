@@ -18,5 +18,3 @@ I started researching this field when I was interning at [Volon Cyber Security](
 Currently, I am pursuing my MS in Cybersecurity from Georgia Tech. I am still researching in Threat Intelligence with [Prof. Paul Pearce](https://www.cc.gatech.edu/~pearce/). I enjoy working in this area of cybersecurity, and I love every aspect of it. In a way, I moved from the Offensive side of security to the Defensive side. I am active on Quora answering many cybersecurity-related questions and am also volunteering as a teaching assistant at Cybrary. I have been attending a lot of conferences starting this year, including BSides Tampa, BSides Atlanta, ComfyCon AU, IntroSecCon, VirSecCon, and many more.
 
 I occasionally play CTFs and am learning many new things in the cybersecurity domain every day. I am passionate about giving back to the community and helping others get into this field.
-
-[How I Started my Journey into Cybersecurity](https://apurvsinghgautam.me/blogfiles/how_I_started_my_journey_into_cybersecurity.html)
