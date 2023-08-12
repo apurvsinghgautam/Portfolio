@@ -57,11 +57,11 @@ a, i{
 }
 a:link, a:visited {
 	color: rgb(255, 255, 255);
-	text-decoration: underline;
+	text-decoration: none;
 	text-decoration-color: rgb(255, 255, 255);
 }
 a:hover, a:active {
-	text-decoration:none
+	text-decoration:underline;
 }
 
 /*------------------------------------------------------------------*/ 
