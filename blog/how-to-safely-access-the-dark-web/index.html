@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How To Safely Access The Dark Web - Apurv Singh Gautam | Threat Researcher</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+  <meta content="Apurv Singh Gautam | Threat Researcher" property="og:site_name">
+  
+    <meta content="Blog, Portfolio 
+" property="og:description">
+  
+  
+    <meta content="2020-09-09T02:00:00-05:00" property="article:published_time">
+    <meta content="https://apurvsinghgautam.me/about/" property="article:author">
+  
+  
+    <meta content="https://apurvsinghgautam.me/blog/assets/img/favicon-120x120.png" property="og:image">
+  
+  
+    
+    <meta content="DarkWeb" property="article:section">
+    
+  
+  
+    
+    <meta content="darkweb" property="article:tag">
+    
+    <meta content="safety" property="article:tag">
+    
+    <meta content="guide" property="article:tag">
+    
+  
+  
+    <meta name="twitter:image:src" content="https://apurvsinghgautam.me/blog/assets/img/favicon-120x120.png">
+  
+
+	<meta name="author" content="Apurv Singh Gautam">
+  <meta name="keywords" content="Apurv Singh Gautam, APURV SINGH GAUTAM, Apurv Gautam, Apurv Singh, Singh Gautam, Apurv Gautam Singh, Security Researcher, Threat Intelligence, Threat Researcher">
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Apurv Singh Gautam | Threat Researcher"/>
+  <meta name="twitter:description" content="Blog"/>
+
+  <meta property="og:title" content="Apurv Singh Gautam | Threat Researcher" />
+  <meta property="og:description" content="Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apurvsinghgautam.me/" />
+  <meta property="og:image" content="https://apurvsinghgautam.me/favicon-558x558.png"/>
+
+  <!--Logos-->
+  <!-- generics -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="img/png" href="/blog/assets/img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="img/png" href="/blog/assets/img/favicon-128x128.png" sizes="128x128">
+  <link rel="icon" type="img/png" href="/blog/assets/img/favicon-192x192.png" sizes="192x192">
+
+  <!-- Android -->
+  <link rel="shortcut icon" type="img/png" href="/blog/assets/img/favicon-196x196.png" sizes="196x196">
+
+  <link rel="shortcut icon" href="/blog/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/blog/assets/img/favicon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/blog/assets/img/favicon-167x167.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/blog/assets/img/favicon-120x120.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="/blog/assets/img/favicon-128x128.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/img/favicon-180x180.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/blog/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/blog/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/blog/"><img src="/blog/assets/img/favicon-120x120.png" alt="Apurv Singh Gautam"></a>
+      </div>
+      <div class="author-name">Apurv Singh Gautam</div>
+      <p>I'm a Threat Researcher focused on monitoring and analyzing wide spectrum of sources by utilizing HUMINT, SOCMINT, and OSINT and producing finished threat intelligence.</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/apurvsinghguatam" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/apurvsinghgautam" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li><a href="https://twitter.com/ASG_Sc0rpi0n" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2023 &copy; Apurv Singh Gautam</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How To Safely Access The Dark Web</h1>
+        <div class="page-date"><span>2020, Sep 09&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>There’s a lot of speculation and mystery around the dark web. Often, when the dark web is mentioned, people presume it is mainly about criminal activities and that what goes on, on the dark web, is shady (pun intended). Although there’s some truth to it, the dark web has many excellent and useful things also. To access these useful resources, one should know how to access and use the dark web safely. There are many misconceptions about the dark web that need clarification.</p>
+
+<h2 id="what-is-the-dark-web">What is the Dark Web?</h2>
+<p>So, what is the dark web? The dark web is a place that hosts websites that are not accessible or indexed by search engines like Google and Bing. The dark web hosts several forums and markets that include drugs, weapons, illicit materials, books, research, exploits, to name a few.</p>
+
+<p>The dark web can be confusing to many people because of its shady nature. Different kinds of people access the dark web for various reasons. Security researchers access the dark web to gain insights on malicious security activities to use intelligence gained from the dark web and secure their organization. Police authorities access the dark web to gain insights on illegal activities like drug or weapons trade or other illicit material trade. Journalists access the dark web to use free expression and for whistleblowing. Other people access the dark web for searching for rare books and other research that is readily accessible on the clear web.</p>
+
+<h2 id="clear-web-deep-web-dark-web">Clear web? Deep web? Dark web?</h2>
+
+<p><img src="https://github.com/apurvsinghgautam/conference-talks/assets/20106707/5831e7b9-e54d-4251-bcf9-211b7c62adc3" alt="Iceberg Image" /></p>
+
+<p>There are three parts to the Internet - clear web or surface web, deep web, and dark web or darknet. The surface web includes sites that are indexed by different search engines like Google and Bing. The deep web contains sites that are not indexed by search engines. This can include anything from cloud instances to databases. This includes everything behind an authentication system, including college systems, company systems, etc. The dark web is a bit different than the other two, and it requires special software, configuration, and authorization to access the dark web.</p>
+
+<p>The dark web is a smaller sub-part of this whole Internet that includes many accessible websites. These websites include drugs, books, illicit materials, weapons, and so on. Accessing these websites is legal, but indulging in the trade of any illegal goods or services is not. The dark web is many things but not just a vast network of criminals.</p>
+
+<h2 id="how-to-access-the-dark-web">How to access the Dark Web?</h2>
+<p>Many organizations offer their peer-to-peer systems for dark web services like Tor Project, I2P, ZeroNet, etc. The most famous one is The Onion Router (Tor), a browser used to access the dark web forums and markets and any other websites hosted on Tor servers. The sites hosted on Tor servers end with a *.onion domain. A Tor domain name is either a 16 or 56 character alphanumeric string.</p>
+
+<p>Tor is a decentralized peer-to-peer system that works on a 3-layer proxy. It has volunteer-based systems, also known as nodes or relays. As shown in the figure below, there is an entry node, a middle node, and an exit node. The onion analogy comes in the form of encrypted layers of packets that flow through the nodes. For example - when Alice tries to access a *.onion domain, the circuit is formed first that decides which route to take and which nodes the traffic will go from (there are 6000 nodes/relays for Tor). Once the circuit is chosen, the packet is formed at the Alice side with all the information needed to request the website and respond to Alice. This packet has encrypted layers, which means that it only knows where it came from and where it will go and nothing else when it goes to the first node. In this way, the identity of the nodes and Alice is hidden. In other words, the entry node doesn’t know the location of the exit node and vice-versa.</p>
+
+<p><img src="https://github.com/apurvsinghgautam/conference-talks/assets/20106707/f97e0228-ba0f-4f90-8ba8-8962d7855ac4" alt="Tor Working" /></p>
+
+<p>Tor browser is required to access Tor websites, as regular browsers (such as Chrome, IE, or Firefox) will not work. The sites located on the Tor browser remain internal to the Tor network, and nothing leaves the network. In this way, Tor provides security and privacy to everyone.</p>
+
+<h2 id="things-on-the-dark-web">Things on the Dark Web</h2>
+<p>The Dark web hosts many websites, including both harmless content and illegal content. These contents can be unlawful, disturbing, or useful, depending on what a person is looking for on the dark web.</p>
+
+<p>Some of the dark web’s useful content includes rare books, research papers, social networking sites like Facebook, news sites like New York Times, and many other valuable sites for journalists, whistleblowers, researchers, etc.</p>
+
+<p>Some illegal or disturbing content on the dark web includes drugs, weapons, illicit materials like child pornography, child trafficking operations, and fake documents, such as drivers’ licenses, passports, SSN, etc.</p>
+
+<p>In short, one can buy just about anything. The dark web is home to everything one can imagine, whether legal or illegal. The ideal method of buying or trading is done using Bitcoin, which is impossible to trace back to the user and ensures anonymity.</p>
+
+<h2 id="how-to-be-safe-on-the-dark-web">How to be safe on the Dark Web</h2>
+<p>Tor can be accessed using the Tor browser on any device, Windows, Linux, and Android. After installing the Tor browser from the Tor Project website, it works like a regular browser. One can input any *.onion URL, and it will open that particular website.</p>
+
+<p>Due to the dark web’s nature and the things circulating on it, it is vitally important to practice proper security practices while accessing the dark web. Some of the safety tips that are true while accessing regular surface websites also hold on the dark web. These include using a VPN while accessing Tor, ensuring that the device’s operating system is up to date. One should never use his email address even though Tor provides anonymity, as it could expose one’s identity.</p>
+
+<p>The main point to be kept in mind while accessing the dark web is to keep one’s identity secret. There are many criminals/actors on the dark web who can take advantage of anyone whose identity is known. It is always advisable to use fake credentials while accessing any websites on Tor.</p>
+
+<p>Another thing to note while browsing through the dark web is that many websites may contain viruses or trojans that can infect one’s computer and expose the data on it. It is advisable to use some isolated system with no personal information on that system, to access the dark web.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The dark web is home to various things that can be useful to some people and others that can be harmful. It is very easy to get into trouble while poking around on the dark web without proper knowledge. As the Tor network is built for anonymity, it is tough to regulate the dark web, including distributing various content, products, and services. Therefore, everyone must educate themselves on the dangers that the dark web poses and never underestimate its dark side. Dark web users should always remember that anonymity can have positive as well as negative effects.</p>
+
+
+      <div class="page-footer">
+        <div class="page-tag">
+          
+            <a href="/blog/tags#darkweb" class="tag">&#35; darkweb</a>
+          
+            <a href="/blog/tags#safety" class="tag">&#35; safety</a>
+          
+            <a href="/blog/tags#guide" class="tag">&#35; guide</a>
+          
+        </div>
+      </div>
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4YX3QYBGD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K4YX3QYBGD');
+</script>
+
+</body>
+</html>
