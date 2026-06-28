@@ -1,0 +1,34 @@
+# Apurv Singh Gautam
+
+> Threat researcher specializing in cybercrime intelligence, dark web OSINT, and finished threat intelligence using HUMINT, SOCMINT, and OSINT. Creator of Robin (AI-powered dark web OSINT), SANS FOR589 contributor, member of Curated Intel, and speaker at DEFCON, SANS, BSides, and RootCon.
+
+## About
+- Name: Apurv Singh Gautam
+- Role: Threat Researcher (Security Analyst, Anti-Scraping at Meta)
+- Focus: Cybercrime intelligence, dark web OSINT, threat intelligence, HUMINT/SOCMINT/OSINT
+- Education: M.S. Cybersecurity, Georgia Institute of Technology; B.Tech IT, Symbiosis Institute of Technology
+- Location: USA
+- Website: https://apurvsinghgautam.me/
+
+## Open-source projects
+- Robin — AI-powered dark web OSINT investigation tool (LLM-driven). https://github.com/apurvsinghgautam/robin
+- Dark Web OSINT Tools — curated list of OSINT tools for the dark web. https://github.com/apurvsinghgautam/dark-web-osint-tools
+- HTTP Reverse Shell — DPI-dodging reverse shell in pure Python 3. https://github.com/apurvsinghgautam/HTTP-Reverse-Shell
+- Crawl & Analyze Top 1M Domains — security-metrics research + subdomain enumeration. https://github.com/apurvsinghgautam/Crawl_Analyze_Top1_Million
+
+## Selected talks & media
+- NetworkChuck (2025) — Dark Web Expert Explains How He Infiltrates Cybercrime Forums
+- DEFCON 33 Recon Village (2025) — Robin: The Archaeologist of the Dark Web
+- SANS OSINT Summit (2021) — OSINT Tools for Diving Deep into the Dark Web
+
+## Research
+- Applying Threat Intelligence Metrics on the Dark Web Data
+- Hacker Forum Exploit & Classification for Proactive Cyber Threat Intelligence
+- Recent Trends in the Era of Cybercrime and the Measures to Control Them (book chapter)
+
+## Profiles
+- LinkedIn: https://www.linkedin.com/in/apurvsinghgautam/
+- GitHub: https://github.com/apurvsinghgautam
+- X/Twitter: https://twitter.com/ASG_Sc0rpi0n
+- Google Scholar: https://scholar.google.com/citations?user=KnvejewAAAAJ&hl=en
+- Medium: https://medium.com/@apurvsinghgautam
