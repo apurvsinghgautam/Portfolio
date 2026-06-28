@@ -235,7 +235,10 @@
 
   <!-- ===== 07 BLOG (A-style) ===== -->
   <div id="blog" style="padding:0 clamp(20px,5vw,72px) clamp(40px,5vw,56px); border-top:1px solid rgba(255,255,255,.1);">
-    <div style="display:flex; align-items:baseline; gap:18px; padding-top:clamp(36px,5vw,48px); margin-bottom:26px; flex-wrap:wrap;"><h2 style="margin:0; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC));">WRITING</h2></div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; padding-top:clamp(36px,5vw,48px); margin-bottom:26px; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; gap:9px; align-items:baseline; flex-wrap:wrap;"><h2 style="margin:0; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC));">WRITING</h2><span style="font:500 13px/1 'IBM Plex Mono'; letter-spacing:.04em; color:#8a8884;">(Blog &amp; research notes)</span></div>
+      <div onClick="{{ openBlog }}" style="cursor:pointer; font:500 12px/1 'IBM Plex Mono'; color:#8a8884; align-self:center;" style-hover="color:oklch(var(--accentBrightC));">VIEW ALL [{{ postCount }}] →</div>
+    </div>
     <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0 clamp(28px,4vw,48px);" class="blog-grid">
       <a href="https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How to Safely Access the Dark Web</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">OSINT</span></a>
       <a href="https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">WannaCry Analysis via the Diamond Model</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">MALWARE</span></a>
@@ -263,6 +266,32 @@
               <span style="font:500 12px/1 'IBM Plex Mono',monospace; color:#7A7873;">{{ t.date }}</span>
               <span><span style="display:block; font:600 15px/1.35 'Space Grotesk'; color:#E8E6E1;">{{ t.title }}</span><span style="font:400 12px/1.4 'IBM Plex Mono',monospace; color:#8a8884;">{{ t.outlet }}</span></span>
               <span class="talkcat" style="font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:oklch(var(--accentBrightC)); justify-self:end; border:1px solid oklch(var(--accentC) / .3); padding:5px 9px; border-radius:2px; white-space:nowrap;">{{ t.cat }}</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ===== BLOG MODAL ===== -->
+  <sc-if value="{{ blogOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeBlog }}" style="position:fixed; inset:0; z-index:100; background:rgba(5,5,6,.84); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:clamp(14px,4vw,56px);">
+      <div onClick="{{ stopProp }}" style="width:min(920px,100%); max-height:88vh; display:flex; flex-direction:column; background:#0E0D0F; border:1px solid rgba(255,255,255,.14); border-radius:10px; overflow:hidden; box-shadow:0 40px 100px rgba(0,0,0,.6);">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.1);">
+          <div style="display:flex; gap:14px; align-items:baseline; flex-wrap:wrap;"><span style="font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.1em; color:oklch(var(--accentBrightC));">FULL ARCHIVE</span><span style="font:700 clamp(17px,2.4vw,21px)/1 'Space Grotesk'; color:#FAF8F3;">Blog &amp; research notes</span></div>
+          <div onClick="{{ closeBlog }}" style="cursor:pointer; flex-shrink:0; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.18); border-radius:5px; color:#E8E6E1; font:400 17px/1 'Space Grotesk';" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC));">✕</div>
+        </div>
+        <div style="display:flex; gap:8px; padding:16px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.08); flex-wrap:wrap;">
+          <sc-for list="{{ blogChips }}" as="chip" hint-placeholder-count="5">
+            <div onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</div>
+          </sc-for>
+        </div>
+        <div style="overflow-y:auto; padding:6px 0;">
+          <sc-for list="{{ posts }}" as="p" hint-placeholder-count="7">
+            <a href="{{ p.url }}" target="_blank" style="display:grid; grid-template-columns:84px 1fr 110px; gap:clamp(12px,2vw,20px); align-items:center; padding:15px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.06);" style-hover="background:rgba(255,255,255,.03);" class="talkrow">
+              <span style="font:500 12px/1 'IBM Plex Mono',monospace; color:#7A7873;">{{ p.date }}</span>
+              <span><span style="display:block; font:600 15px/1.35 'Space Grotesk'; color:#E8E6E1;">{{ p.title }}</span><span style="font:400 12px/1.4 'IBM Plex Mono',monospace; color:#8a8884;">{{ p.read }}</span></span>
+              <span class="talkcat" style="font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:oklch(var(--accentBrightC)); justify-self:end; border:1px solid oklch(var(--accentC) / .3); padding:5px 9px; border-radius:2px; white-space:nowrap;">{{ p.cat }}</span>
             </a>
           </sc-for>
         </div>
@@ -315,7 +344,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Red&quot;,&quot;options&quot;:[&quot;Amber&quot;,&quot;Cyan&quot;,&quot;Red&quot;,&quot;Green&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;mood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Editorial&quot;,&quot;options&quot;:[&quot;Editorial&quot;,&quot;Console&quot;,&quot;Blackout&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;display&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Mono Caps&quot;,&quot;options&quot;:[&quot;Mono Caps&quot;,&quot;Editorial Serif&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;}}">
 class Component extends DCLogic {
-  state = { modalOpen: false, filter: 'All', showTop: false, navOpen: false };
+  state = { modalOpen: false, filter: 'All', showTop: false, navOpen: false, blogOpen: false, blogFilter: 'All' };
 
   componentDidMount() {
     this._onScroll = () => {
@@ -357,6 +386,18 @@ class Component extends DCLogic {
     ];
   }
 
+  allPosts() {
+    return [
+      { date:'Sep 2020', read:'5 min read', cat:'OSINT',     title:'How To Safely Access The Dark Web',                     url:'https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/' },
+      { date:'Jul 2020', read:'2 min read', cat:'Career',    title:'How to Start in Cybersecurity',                         url:'https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/' },
+      { date:'May 2020', read:'3 min read', cat:'Career',    title:'Why Having an Online Portfolio is Important?',           url:'https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/' },
+      { date:'May 2020', read:'8 min read', cat:'Malware',   title:'WannaCry Ransomware Analysis through Diamond Model',     url:'https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/' },
+      { date:'Apr 2020', read:'3 min read', cat:'Career',    title:'How I Started my Journey in Cybersecurity',             url:'https://apurvsinghgautam.me/blog/how-i-started-my-journey-into-cybersecurity/' },
+      { date:'Jan 2018', read:'2 min read', cat:'Forensics', title:'Insights into Bitcoin Forensics',                       url:'https://apurvsinghgautam.me/blog/insights-into-bitcoin-forensics/' },
+      { date:'Apr 2017', read:'3 min read', cat:'Malware',   title:'WannaCry Ransomware',                                   url:'https://apurvsinghgautam.me/blog/wannacry-ransomware/' },
+    ];
+  }
+
   renderVals() {
     const cats = ['All', 'Talk', 'Podcast', 'Workshop', 'Seminar'];
     const filter = this.state.filter;
@@ -369,6 +410,17 @@ class Component extends DCLogic {
       onClick: () => this.setState({ filter: c }),
     }));
     const talks = filter === 'All' ? this.allTalks() : this.allTalks().filter(t => t.cat === filter);
+
+    const blogFilter = this.state.blogFilter;
+    const blogCats = ['All', 'OSINT', 'Malware', 'Career', 'Forensics'];
+    const blogChips = blogCats.map(c => ({
+      label: c.toUpperCase(),
+      style: base + (blogFilter === c
+        ? 'background:oklch(var(--accentBrightC)); color:var(--accentInk); border:1px solid transparent;'
+        : 'background:transparent; color:#9b988f; border:1px solid rgba(255,255,255,.16);'),
+      onClick: () => this.setState({ blogFilter: c }),
+    }));
+    const posts = blogFilter === 'All' ? this.allPosts() : this.allPosts().filter(p => p.cat === blogFilter);
     const accent = (this.props.accent || 'Amber').toLowerCase();
     const moodRaw = (this.props.mood || 'Editorial').toLowerCase();
     const displayRaw = (this.props.display || 'Mono Caps').toLowerCase();
@@ -389,6 +441,12 @@ class Component extends DCLogic {
       chips,
       talks,
       talkCount: this.allTalks().length,
+      blogOpen: this.state.blogOpen,
+      openBlog: () => this.setState({ blogOpen: true, blogFilter: 'All' }),
+      closeBlog: () => this.setState({ blogOpen: false }),
+      blogChips,
+      posts,
+      postCount: this.allPosts().length,
     };
   }
 }
