@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apurv Singh Gautam — Threat Researcher | Cybercrime & Dark Web Intelligence</title>
+<title>Apurv Singh Gautam — Threat Researcher | Cybercrime Intelligence</title>
 <meta name="description" content="Apurv Singh Gautam is a threat researcher specializing in cybercrime intelligence, dark web OSINT, and threat intelligence. Creator of Robin (AI-powered dark web OSINT), SANS FOR589 contributor, and speaker at DEFCON, SANS, and BSides.">
 <meta name="keywords" content="Apurv Singh Gautam, threat researcher, cybercrime intelligence, dark web OSINT, threat intelligence, HUMINT, SOCMINT, OSINT, Robin OSINT, SANS FOR589, Curated Intel">
 <meta name="author" content="Apurv Singh Gautam">
@@ -19,6 +19,7 @@
 <meta name="twitter:title" content="Apurv Singh Gautam — Threat Researcher">
 <meta name="twitter:description" content="Threat researcher in cybercrime & dark web intelligence. Creator of Robin (AI dark web OSINT), SANS FOR589 contributor, and DEFCON/SANS speaker.">
 <meta name="twitter:image" content="https://apurvsinghgautam.me/assets/logo.png">
+<meta name="google-site-verification" content="Wc0LBPIulWoND-g-Na5SJVGLbVB0pwep_zrYM4zVUCM" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -80,9 +81,9 @@
   </div>
 
   <!-- nav -->
-  <div style="position:sticky; top:31px; z-index:19; display:flex; justify-content:space-between; align-items:center; padding:18px clamp(20px,5vw,72px); background:rgba(10,10,11,.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.07);">
-    <a href="https://apurvsinghgautam.me/" target="_blank" aria-label="Home" style="display:block;"><img src="assets/logo.png" alt="ASG" style="height:30px; width:auto; display:block;"></a>
-    <div style="display:flex; gap:clamp(14px,2vw,30px); font:500 12px/1 'IBM Plex Mono',monospace; letter-spacing:.03em; color:#8a8884; flex-wrap:wrap;">
+  <div class="navbar" data-navopen="{{ navOpen }}" style="position:sticky; top:31px; z-index:19; display:flex; justify-content:space-between; align-items:center; padding:18px clamp(20px,5vw,72px); background:rgba(10,10,11,.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.07);">
+    <a href="#" aria-label="Home" style="display:block;"><img src="assets/logo.png" alt="ASG" style="height:30px; width:auto; display:block;"></a>
+    <div class="nav-links" onClick="{{ closeNav }}" style="display:flex; gap:clamp(14px,2vw,30px); font:500 12px/1 'IBM Plex Mono',monospace; letter-spacing:.03em; color:#8a8884;">
       <a href="#about" style-hover="color:oklch(var(--accentBrightC));">ABOUT</a>
       <a href="#media" style-hover="color:oklch(var(--accentBrightC));">MEDIA</a>
       <a href="#projects" style-hover="color:oklch(var(--accentBrightC));">PROJECTS</a>
@@ -90,6 +91,7 @@
       <a href="#research" style-hover="color:oklch(var(--accentBrightC));">RESEARCH</a>
       <a href="#blog" style-hover="color:oklch(var(--accentBrightC));">BLOG</a>
     </div>
+    <div class="nav-toggle" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none; cursor:pointer; align-items:center; gap:8px; font:600 12px/1 'IBM Plex Mono',monospace; letter-spacing:.08em; color:#C9C6C0; border:1px solid rgba(255,255,255,.18); border-radius:6px; padding:9px 13px;">{{ navLabel }}</div>
   </div>
 
   <!-- ===== HERO ===== -->
@@ -126,7 +128,7 @@
         <p style="margin:0; font:300 clamp(21px,2.4vw,27px)/1.5 'Newsreader',serif; color:#E4E1DA;">Apurv Singh Gautam is a Security Analyst specializing in <span style="color:#FAF8F3; font-style:italic;">anti-scraping investigations</span> to protect Meta products and users from automated abuse, data exfiltration, and AI-enabled threats.</p>
         <p style="margin:22px 0 0; font:400 16px/1.75 'Space Grotesk',sans-serif; color:#9C9990;">He focuses on detecting and disrupting scraping operations at scale by analyzing large datasets, building automation, and conducting investigations using OSINT, external threat intelligence, and internal telemetry to drive high-impact enforcement actions.</p>
         <p style="margin:18px 0 0; font:400 16px/1.75 'Space Grotesk',sans-serif; color:#9C9990;">Apurv has contributed to the latest <a href="https://www.sans.org" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">SANS Institute's</a> course <a href="https://www.sans.org/cyber-security-courses/cybercrime-intelligence/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">FOR589</a> on Cybercrime Intelligence and is a contributing member of <a href="https://twitter.com/CuratedIntel" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">Curated Intel</a>. He has delivered talks &amp; workshops at national and international conferences like SANS OSINT Summit, SANS Cyber Defense Forum, DEFCON Blue Team Village, BSides Singapore, RootCon and others. Apurv is featured in major podcasts like <a href="https://itspmagazine.simplecast.com/episodes/georgia-tech-unveiled-tales-of-admission-triumphs-conversations-with-a-current-student-an-alum-off-the-record-with-saman-student-abroad-podcast2" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">ITSPMagazine</a>, <a href="https://podcasts.apple.com/us/podcast/the-recession-proof-tech-job-in-2024-meet/id1743902198?i=1000654013421" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">Tech Talks with Singh</a>, etc. He is passionate about giving back to the community and helping others get into this field, and has delivered many talks and workshops in schools and colleges. In the past, he has volunteered with <a href="https://www.stationx.net/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">StationX</a> to help students navigate into Cybersecurity, and also volunteered as a Darknet researcher at <a href="https://cti-league.com/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">CTI League</a> and <a href="https://ebcs.gsu.edu" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">EBCS</a> <a href="https://ebcs.gsu.edu/project/darknet-analysis/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">Darknet Analysis</a> group. He holds a master's degree in Information Security from Georgia Institute of Technology, USA.</p>
-        <p style="margin:18px 0 0; font:400 15px/1.7 'Space Grotesk',sans-serif; color:#807d76;">He looks forward to the end of the day to <a href="https://www.youtube.com/@ASG.Sc0rpi0n" target="_blank" style="color:#9C9990; border-bottom:1px solid rgba(255,255,255,.2);">play</a> and <a href="https://www.twitch.tv/asg_sc0rpi0n" target="_blank" style="color:#9C9990; border-bottom:1px solid rgba(255,255,255,.2);">stream</a> one of the AAA games, Rainbow 6 Siege.</p>
+        <p style="margin:18px 0 0; font:400 15px/1.7 'Space Grotesk',sans-serif; color:#807d76;">He looks forward to the end of the day to <a href="https://www.youtube.com/@ASG.Sc0rpi0n" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">play</a> and <a href="https://www.twitch.tv/asg_sc0rpi0n" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">stream</a> one of the AAA games, Rainbow 6 Siege.</p>
       </div>
       <div style="border:1px solid oklch(var(--accentC) / .25); border-radius:4px; overflow:hidden;"><img src="assets/headshot.jpg" alt="Apurv Singh Gautam" style="width:100%; display:block; filter:grayscale(.4) contrast(1.05);"></div>
     </div>
@@ -260,7 +262,7 @@
             <a href="{{ t.url }}" target="_blank" style="display:grid; grid-template-columns:84px 1fr 96px; gap:clamp(12px,2vw,20px); align-items:center; padding:15px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.06);" style-hover="background:rgba(255,255,255,.03);" class="talkrow">
               <span style="font:500 12px/1 'IBM Plex Mono',monospace; color:#7A7873;">{{ t.date }}</span>
               <span><span style="display:block; font:600 15px/1.35 'Space Grotesk'; color:#E8E6E1;">{{ t.title }}</span><span style="font:400 12px/1.4 'IBM Plex Mono',monospace; color:#8a8884;">{{ t.outlet }}</span></span>
-              <span style="font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:oklch(var(--accentBrightC)); justify-self:end; border:1px solid oklch(var(--accentC) / .3); padding:5px 9px; border-radius:2px; white-space:nowrap;">{{ t.cat }}</span>
+              <span class="talkcat" style="font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:oklch(var(--accentBrightC)); justify-self:end; border:1px solid oklch(var(--accentC) / .3); padding:5px 9px; border-radius:2px; white-space:nowrap;">{{ t.cat }}</span>
             </a>
           </sc-for>
         </div>
@@ -296,8 +298,16 @@
       .proj-grid{grid-template-columns:1fr !important;}
       .split{grid-template-columns:1fr !important;}
       .blog-grid{grid-template-columns:1fr !important;}
-      .talkrow{grid-template-columns:70px 1fr !important;}
-      .talkrow .catcol{display:none !important;}
+      .talkrow{grid-template-columns:62px 1fr !important; gap:4px 14px !important;}
+      .talkrow .talkcat{grid-column:2 !important; justify-self:start !important; margin-top:5px !important;}
+      /* collapsing mobile menu */
+      .nav-toggle{display:flex !important;}
+      .nav-links{position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:flex-start; gap:0 !important; background:rgba(10,10,11,.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.1); box-shadow:0 24px 48px rgba(0,0,0,.5); display:none !important;}
+      .navbar[data-navopen="true"] .nav-links{display:flex !important;}
+      .nav-links a{width:100%; padding:15px clamp(20px,5vw,72px); font-size:13px !important; border-top:1px solid rgba(255,255,255,.06);}
+    }
+    @media (max-width:430px){
+      .flagship-side{flex-direction:column !important; align-items:flex-start !important; text-align:left !important; gap:5px !important;}
     }
     @media (min-width:560px){ .sb-mid{display:block !important;} }
   </style>
@@ -305,7 +315,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Red&quot;,&quot;options&quot;:[&quot;Amber&quot;,&quot;Cyan&quot;,&quot;Red&quot;,&quot;Green&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;mood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Editorial&quot;,&quot;options&quot;:[&quot;Editorial&quot;,&quot;Console&quot;,&quot;Blackout&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;display&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Mono Caps&quot;,&quot;options&quot;:[&quot;Mono Caps&quot;,&quot;Editorial Serif&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;}}">
 class Component extends DCLogic {
-  state = { modalOpen: false, filter: 'All', showTop: false };
+  state = { modalOpen: false, filter: 'All', showTop: false, navOpen: false };
 
   componentDidMount() {
     this._onScroll = () => {
@@ -368,6 +378,10 @@ class Component extends DCLogic {
       display: displayRaw.indexOf('editorial') === 0 ? 'editorial' : 'mono',
       modalOpen: this.state.modalOpen,
       showTop: this.state.showTop,
+      navOpen: this.state.navOpen,
+      navLabel: this.state.navOpen ? 'CLOSE ✕' : 'MENU ≡',
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
       scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
       openModal: () => this.setState({ modalOpen: true, filter: 'All' }),
       closeModal: () => this.setState({ modalOpen: false }),
