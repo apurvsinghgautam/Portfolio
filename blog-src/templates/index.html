@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="author" content="{{author}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{siteUrl}}/assets/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{siteUrl}}/assets/logo.png">
+<link rel="icon" type="image/png" href="{{siteUrl}}/assets/logo.png">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{baseurl}}/assets/css/dossier.css">
+</head>
+<body>
+
+<div class="statusbar">
+  <span class="statusbar__live">
+    <span class="statusbar__dot"></span>
+    <span class="statusbar__path">{{statusPath}}</span>
+  </span>
+  <span>{{statusRight}}</span>
+</div>
+
+<div class="masthead">
+  <a href="{{siteUrl}}/" aria-label="{{author}} — home">
+    <img class="masthead__logo" src="{{baseurl}}/assets/img/logo.png" alt="ASG">
+  </a>
+  <!-- Order and items must mirror the portfolio's nav exactly. -->
+  <nav class="masthead__nav">
+    <a href="{{siteUrl}}/#about">ABOUT</a>
+    <a href="{{siteUrl}}/#media">MEDIA</a>
+    <a href="{{siteUrl}}/#projects">PROJECTS</a>
+    <a href="{{siteUrl}}/#experience">EXPERIENCE</a>
+    <a href="{{siteUrl}}/#research">RESEARCH</a>
+    <a href="{{baseurl}}/" class="is-current">BLOG</a>
+  </nav>
+</div>
+
+<main class="shell">
+  <div class="index-head">
+    <div class="kicker">{{kicker}}</div>
+    <h1 class="index-head__title">{{heading}}</h1>
+    <p class="index-head__blurb">{{blurb}}</p>
+    <div class="chips" role="group" aria-label="Filter posts by category">
+    {{{chips}}}
+    </div>
+  </div>
+
+  <div class="entries">
+{{{entries}}}
+    <div class="entries__empty" hidden>NO ENTRIES MATCH THIS FILTER.</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span>{{year}} &copy; {{author}}</span>
+  <span class="footer__social">
+    <a href="https://www.linkedin.com/in/{{li}}" target="_blank" rel="noopener">LINKEDIN</a>
+    <a href="https://github.com/{{gh}}" target="_blank" rel="noopener">GITHUB</a>
+    <a href="https://twitter.com/{{tw}}" target="_blank" rel="noopener">X</a>
+  </span>
+</footer>
+
+<script>
+  (function () {
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
+    if (!chips.length) return;
+    var entries = Array.prototype.slice.call(document.querySelectorAll('.entry'));
+    var years = Array.prototype.slice.call(document.querySelectorAll('.entries__year'));
+    var empty = document.querySelector('.entries__empty');
+
+    function apply(filter) {
+      entries.forEach(function (el) {
+        el.hidden = !(filter === 'ALL' || el.dataset.cat === filter);
+      });
+      // Hide a year header once every entry beneath it is filtered out.
+      var shown = 0;
+      years.forEach(function (head) {
+        var visible = 0;
+        var node = head.nextElementSibling;
+        while (node && node.classList.contains('entry')) {
+          if (!node.hidden) visible++;
+          node = node.nextElementSibling;
+        }
+        head.hidden = visible === 0;
+        shown += visible;
+      });
+      if (empty) empty.hidden = shown !== 0;
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) {
+          var on = c === chip;
+          c.classList.toggle('is-active', on);
+          c.setAttribute('aria-pressed', String(on));
+        });
+        apply(chip.dataset.filter);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

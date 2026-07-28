@@ -1,0 +1,63 @@
+name: Build blog
+
+# Write a Markdown file in blog-src/posts/, push, and the rendered blog/ is
+# regenerated and committed automatically. GitHub Pages serves it from master.
+on:
+  push:
+    branches: [master]
+    paths:
+      - "blog-src/**"
+      - ".github/workflows/blog.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-blog
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        working-directory: blog-src
+        run: bun install --frozen-lockfile
+
+      - name: Build blog
+        working-directory: blog-src
+        run: bun run build.ts
+
+      - name: Sanity-check output
+        run: |
+          set -e
+          test -f blog/index.html
+          test -f blog/tags/index.html
+          test -f blog/assets/css/dossier.css
+          grep -q 'FILE://WRITING' blog/index.html
+          posts=$(find blog -mindepth 1 -maxdepth 1 -type d ! -name assets ! -name tags | wc -l)
+          echo "post directories: $posts"
+          test "$posts" -ge 1
+
+      - name: Commit regenerated blog
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # index.html too — build.ts rewrites the portfolio's teaser grid and the
+          # modal's allPosts() array. Committing only blog/ would leave the
+          # portfolio silently stale whenever a post is added.
+          git add blog index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            # [skip ci] so this commit does not retrigger the workflow.
+            git commit -m "Rebuild blog from blog-src [skip ci]"
+            git push
+          fi

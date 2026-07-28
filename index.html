@@ -77,7 +77,7 @@
   <div style="position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:10px clamp(20px,5vw,72px); border-bottom:1px solid rgba(255,255,255,.1); font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:#7A7873; background:rgba(10,10,11,.86); backdrop-filter:blur(10px);">
     <span style="display:flex; align-items:center; gap:9px;"><span style="width:7px; height:7px; border-radius:50%; background:oklch(var(--accentC)); box-shadow:0 0 10px oklch(var(--accentC));"></span>FILE://APURV_SINGH_GAUTAM</span>
     <span style="display:none;" class="sb-mid">CLASSIFICATION: <span style="color:oklch(var(--accentBrightC));">TLP:CLEAR</span></span>
-    <span>LAST_UPDATE: 2026.06</span>
+    <span>LAST_UPDATE: 2026.07</span>
   </div>
 
   <!-- nav -->
@@ -240,10 +240,12 @@
       <div onClick="{{ openBlog }}" style="cursor:pointer; font:500 12px/1 'IBM Plex Mono'; color:#8a8884; align-self:center;" style-hover="color:oklch(var(--accentBrightC));">VIEW ALL [{{ postCount }}] →</div>
     </div>
     <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0 clamp(28px,4vw,48px);" class="blog-grid">
-      <a href="https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How to Safely Access the Dark Web</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">OSINT</span></a>
-      <a href="https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">WannaCry Analysis via the Diamond Model</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">MALWARE</span></a>
+      <!--BLOG:TEASER:START-->
       <a href="https://apurvsinghgautam.me/blog/Anonymous%20Traffic%20Network.pdf" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">Anonymous Traffic Network</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">PRIVACY</span></a>
-      <a href="https://apurvsinghgautam.me/blog/how-i-started-my-journey-into-cybersecurity/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How I Started My Journey into Cybersecurity</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">CAREER</span></a>
+      <a href="https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How To Safely Access The Dark Web</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">OSINT</span></a>
+      <a href="https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How to Start in Cybersecurity</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">CAREER</span></a>
+      <a href="https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">Why Having an Online Portfolio is Important?</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">CAREER</span></a>
+      <!--BLOG:TEASER:END-->
     </div>
   </div>
 
@@ -388,13 +390,16 @@ class Component extends DCLogic {
 
   allPosts() {
     return [
-      { date:'Sep 2020', read:'5 min read', cat:'OSINT',     title:'How To Safely Access The Dark Web',                     url:'https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/' },
-      { date:'Jul 2020', read:'2 min read', cat:'Career',    title:'How to Start in Cybersecurity',                         url:'https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/' },
-      { date:'May 2020', read:'3 min read', cat:'Career',    title:'Why Having an Online Portfolio is Important?',           url:'https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/' },
-      { date:'May 2020', read:'8 min read', cat:'Malware',   title:'WannaCry Ransomware Analysis through Diamond Model',     url:'https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/' },
-      { date:'Apr 2020', read:'3 min read', cat:'Career',    title:'How I Started my Journey in Cybersecurity',             url:'https://apurvsinghgautam.me/blog/how-i-started-my-journey-into-cybersecurity/' },
-      { date:'Jan 2018', read:'2 min read', cat:'Forensics', title:'Insights into Bitcoin Forensics',                       url:'https://apurvsinghgautam.me/blog/insights-into-bitcoin-forensics/' },
-      { date:'Apr 2017', read:'3 min read', cat:'Malware',   title:'WannaCry Ransomware',                                   url:'https://apurvsinghgautam.me/blog/wannacry-ransomware/' },
+      //BLOG:POSTS:START
+      { date:'Sep 2020', read:'5 min read', cat:'OSINT', title:"How To Safely Access The Dark Web", url:'https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/' },
+      { date:'Jul 2020', read:'2 min read', cat:'Career', title:"How to Start in Cybersecurity", url:'https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/' },
+      { date:'May 2020', read:'2 min read', cat:'Career', title:"Why Having an Online Portfolio is Important?", url:'https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/' },
+      { date:'May 2020', read:'8 min read', cat:'Malware', title:"WannaCry Ransomware Analysis through Diamond Model", url:'https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/' },
+      { date:'May 2020', read:'PDF', cat:'Privacy', title:"Anonymous Traffic Network", url:'https://apurvsinghgautam.me/blog/Anonymous%20Traffic%20Network.pdf' },
+      { date:'Apr 2020', read:'3 min read', cat:'Career', title:"How I Started my Journey in Cybersecurity", url:'https://apurvsinghgautam.me/blog/how-i-started-my-journey-into-cybersecurity/' },
+      { date:'Jan 2018', read:'2 min read', cat:'Forensics', title:"Insights into Bitcoin Forensics", url:'https://apurvsinghgautam.me/blog/insights-into-bitcoin-forensics/' },
+      { date:'Apr 2017', read:'3 min read', cat:'Malware', title:"WannaCry Ransomware", url:'https://apurvsinghgautam.me/blog/wannacry-ransomware/' },
+      //BLOG:POSTS:END
     ];
   }
 

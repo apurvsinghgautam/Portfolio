@@ -1,1 +1,3 @@
+User-agent: *
+Allow: /
 Sitemap: https://apurvsinghgautam.me/blog/sitemap.xml
