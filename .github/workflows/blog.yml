@@ -40,7 +40,7 @@ jobs:
           set -e
           test -f blog/index.html
           test -f blog/tags/index.html
-          test -f blog/assets/css/dossier.css
+          test -f assets/css/site.css
           grep -q 'FILE://WRITING' blog/index.html
           posts=$(find blog -mindepth 1 -maxdepth 1 -type d ! -name assets ! -name tags | wc -l)
           echo "post directories: $posts"
