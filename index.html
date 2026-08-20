@@ -10,6 +10,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://apurvsinghgautam.me/">
 <link rel="icon" type="image/png" href="assets/logo.png">
+<meta name="theme-color" content="#0A0A0B">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Apurv Singh Gautam — Threat Researcher">
 <meta property="og:description" content="Threat researcher in cybercrime & dark web intelligence. Creator of Robin (AI dark web OSINT), SANS FOR589 contributor, and DEFCON/SANS speaker.">
@@ -20,6 +21,10 @@
 <meta name="twitter:description" content="Threat researcher in cybercrime & dark web intelligence. Creator of Robin (AI dark web OSINT), SANS FOR589 contributor, and DEFCON/SANS speaker.">
 <meta name="twitter:image" content="https://apurvsinghgautam.me/assets/logo.png">
 <meta name="google-site-verification" content="Wc0LBPIulWoND-g-Na5SJVGLbVB0pwep_zrYM4zVUCM" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,7 +34,7 @@
   "image": "https://apurvsinghgautam.me/assets/logo.png",
   "jobTitle": "Threat Researcher",
   "description": "Threat researcher specializing in cybercrime intelligence, dark web OSINT, and finished threat intelligence using HUMINT, SOCMINT, and OSINT.",
-  "worksFor": { "@type": "Organization", "name": "Meta" },
+  "worksFor": { "@type": "Organization", "name": "Cyble" },
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology" },
     { "@type": "CollegeOrUniversity", "name": "Symbiosis Institute of Technology" }
@@ -44,417 +49,275 @@
   ]
 }
 </script>
-<script src="./support.js"></script>
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box;}
-  html,body{margin:0;}
-  a{text-decoration:none;color:inherit;}
-  ul{margin:0;padding:0;list-style:none;}
-  ::selection{background:oklch(var(--accentC) / .3);color:#fff;}
-  :root{--accentC:0.82 0.13 75; --accentBrightC:0.86 0.10 75; --accentInk:#1a1400;}
-  .asg-root[data-theme="cyan"]{--accentC:0.74 0.12 220; --accentBrightC:0.83 0.11 210; --accentInk:#04161c;}
-  .asg-root[data-theme="red"]{--accentC:0.62 0.21 25; --accentBrightC:0.71 0.20 25; --accentInk:#1f0707;}
-  .asg-root[data-theme="green"]{--accentC:0.80 0.17 150; --accentBrightC:0.86 0.16 150; --accentInk:#03160b;}
-  .asg-root[data-mood="console"]{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px) !important; background-size:44px 44px !important;}
-  .asg-root[data-mood="blackout"]{background:#000 !important;}
-  .asg-root[data-mood="blackout"] .hero-glow{opacity:0 !important;}
-  .asg-root[data-mood="console"] .hero-glow{opacity:1 !important;}
-  .asg-root[data-display="editorial"] .hero-h1{font-family:'Newsreader',serif !important; font-weight:400 !important; font-style:italic !important; letter-spacing:-.015em !important;}
-  body{background:#0A0A0B;}
-</style>
-</helmet>
-
-<div class="asg-root" data-theme="{{ theme }}" data-mood="{{ mood }}" data-display="{{ display }}" style="background:#0A0A0B; color:#E8E6E1; font-family:'Space Grotesk',sans-serif; min-height:100vh;">
+<div class="site-root">
 
   <!-- top status bar -->
-  <div style="position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:10px clamp(20px,5vw,72px); border-bottom:1px solid rgba(255,255,255,.1); font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:#7A7873; background:rgba(10,10,11,.86); backdrop-filter:blur(10px);">
-    <span style="display:flex; align-items:center; gap:9px;"><span style="width:7px; height:7px; border-radius:50%; background:oklch(var(--accentC)); box-shadow:0 0 10px oklch(var(--accentC));"></span>FILE://APURV_SINGH_GAUTAM</span>
-    <span style="display:none;" class="sb-mid">CLASSIFICATION: <span style="color:oklch(var(--accentBrightC));">TLP:CLEAR</span></span>
+  <div class="site-statusbar">
+    <span class="site-statusbar__live"><span class="site-statusbar__dot"></span>FILE://APURV_SINGH_GAUTAM</span>
+    <span class="site-statusbar__mid">CLASSIFICATION: <b>TLP:CLEAR</b></span>
     <span>LAST_UPDATE: 2026.07</span>
   </div>
 
   <!-- nav -->
-  <div class="navbar" data-navopen="{{ navOpen }}" style="position:sticky; top:31px; z-index:19; display:flex; justify-content:space-between; align-items:center; padding:18px clamp(20px,5vw,72px); background:rgba(10,10,11,.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.07);">
-    <a href="#" aria-label="Home" style="display:block;"><img src="assets/logo.png" alt="ASG" style="height:30px; width:auto; display:block;"></a>
-    <div class="nav-links" onClick="{{ closeNav }}" style="display:flex; gap:clamp(14px,2vw,30px); font:500 12px/1 'IBM Plex Mono',monospace; letter-spacing:.03em; color:#8a8884;">
-      <a href="#about" style-hover="color:oklch(var(--accentBrightC));">ABOUT</a>
-      <a href="#media" style-hover="color:oklch(var(--accentBrightC));">MEDIA</a>
-      <a href="#projects" style-hover="color:oklch(var(--accentBrightC));">PROJECTS</a>
-      <a href="#experience" style-hover="color:oklch(var(--accentBrightC));">EXPERIENCE</a>
-      <a href="#research" style-hover="color:oklch(var(--accentBrightC));">RESEARCH</a>
-      <a href="#blog" style-hover="color:oklch(var(--accentBrightC));">BLOG</a>
+  <div class="site-nav" id="siteNav">
+    <a href="#" aria-label="Home"><img class="site-nav__logo" src="assets/logo.png" alt="ASG"></a>
+    <div class="site-nav__links" id="navLinks">
+      <a href="#about">ABOUT</a>
+      <a href="#media">MEDIA</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#research">RESEARCH</a>
+      <a href="#blog">BLOG</a>
     </div>
-    <div class="nav-toggle" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none; cursor:pointer; align-items:center; gap:8px; font:600 12px/1 'IBM Plex Mono',monospace; letter-spacing:.08em; color:#C9C6C0; border:1px solid rgba(255,255,255,.18); border-radius:6px; padding:9px 13px;">{{ navLabel }}</div>
+    <button class="site-nav__toggle" id="navToggle" aria-label="Menu">MENU ≡</button>
   </div>
 
   <!-- ===== HERO ===== -->
-  <div style="padding:clamp(56px,9vw,96px) clamp(20px,5vw,72px) clamp(48px,7vw,76px); border-top:1px solid rgba(255,255,255,.1); border-bottom:1px solid rgba(255,255,255,.1); position:relative; overflow:hidden;">
-    <div class="hero-glow" style="position:absolute; inset:0; background:radial-gradient(900px 420px at 78% 18%, oklch(var(--accentC) / .10), transparent 70%); pointer-events:none;"></div>
-    <div style="position:relative; font:500 12px/1 'IBM Plex Mono',monospace; letter-spacing:.1em; color:oklch(var(--accentBrightC)); margin-bottom:30px;">// THREAT RESEARCHER &nbsp;·&nbsp; CYBERCRIME INTELLIGENCE &nbsp;·&nbsp; OSINT</div>
-    <h1 class="hero-h1" style="position:relative; margin:0; font:700 clamp(48px,9vw,98px)/0.98 'Space Grotesk'; letter-spacing:-.03em; color:#FAF8F3;">APURV SINGH<br><span style="color:#FAF8F3;">GAUTAM</span></h1>
-    <div style="position:relative; display:grid; grid-template-columns:1fr 290px; gap:48px; margin-top:42px; align-items:end;" class="hero-grid">
-      <p style="margin:0; font-size:clamp(16px,1.7vw,19px); line-height:1.7; color:#A09D96; max-width:640px;">I monitor and analyze a wide spectrum of sources using HUMINT, SOCMINT and OSINT to produce finished threat intelligence. Currently disrupting abuse at <span style="color:#FAF8F3;">Meta</span>.</p>
-      <div style="font:500 12px/1.85 'IBM Plex Mono',monospace; color:#7A7873; border-left:1px solid oklch(var(--accentC) / .4); padding-left:20px;">SUBJECT&nbsp;: ASG<br>SECTOR&nbsp;: <span style="color:#C9C6C0;">CTI / THREAT RESEARCH</span><br>BASE&nbsp;&nbsp;&nbsp;: USA<br>STATUS&nbsp;: <span style="color:oklch(var(--accentBrightC));">● ACTIVE</span></div>
+  <div class="hero">
+    <div class="hero__glow"></div>
+    <div class="hero__kicker">// THREAT RESEARCHER &nbsp;·&nbsp; CYBERCRIME INTELLIGENCE &nbsp;·&nbsp; OSINT</div>
+    <h1 class="hero__title">APURV SINGH<br>GAUTAM</h1>
+    <div class="hero__grid">
+      <p class="hero__lede">I collect and synthesize a wide spectrum of sources using HUMINT and OSINT to produce finished threat intel. Currently tracking threats at Cyble.</p>
+      <div class="hero__meta">SUBJECT&nbsp;: ASG<br>SECTOR&nbsp;: <b>CTI / THREAT RESEARCH</b><br>BASE&nbsp;&nbsp;&nbsp;: USA<br>STATUS&nbsp;: <span class="is-active">● ACTIVE</span></div>
     </div>
-    <div style="position:relative; display:flex; gap:12px; margin-top:40px; align-items:center; flex-wrap:wrap;">
-      <span style="font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.12em; color:#7A7873; margin-right:4px;">CONNECT &nbsp;//</span>
-      <a href="https://www.linkedin.com/in/apurvsinghgautam/" target="_blank" aria-label="LinkedIn" style="width:46px; height:46px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.16); border-radius:7px; color:#C9C6C0;" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC)); background:oklch(var(--accentC) / .08);"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.22 8h4.56v14H.22V8zM8.34 8h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v8.44h-4.56v-7.48c0-1.78-.03-4.07-2.48-4.07-2.48 0-2.86 1.94-2.86 3.94V22H8.34V8z"/></svg></a>
-      <a href="https://github.com/apurvsinghgautam" target="_blank" aria-label="GitHub" style="width:46px; height:46px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.16); border-radius:7px; color:#C9C6C0;" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC)); background:oklch(var(--accentC) / .08);"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.33-1.73-1.33-1.73-1.09-.73.08-.71.08-.71 1.2.08 1.83 1.21 1.83 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.31-5.47-5.81 0-1.28.47-2.33 1.24-3.15-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.2.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.28-1.52 3.29-1.2 3.29-1.2.66 1.64.24 2.86.12 3.16.77.82 1.24 1.87 1.24 3.15 0 4.51-2.81 5.5-5.49 5.79.43.36.81 1.09.81 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.83.56C20.57 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg></a>
-      <a href="https://twitter.com/ASG_Sc0rpi0n" target="_blank" aria-label="X" style="width:46px; height:46px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.16); border-radius:7px; color:#C9C6C0;" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC)); background:oklch(var(--accentC) / .08);"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="https://scholar.google.com/citations?user=KnvejewAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" style="width:46px; height:46px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.16); border-radius:7px; color:#C9C6C0;" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC)); background:oklch(var(--accentC) / .08);"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L1 8l11 6 7-3.82V15h2V7.16L23 6 12 2zM5 13.18v3.64L12 21l7-4.18v-3.64L12 17 5 13.18z"/></svg></a>
+    <div class="hero__connect">
+      <span class="hero__connect-label">CONNECT &nbsp;//</span>
+      <a class="hero__social" href="https://www.linkedin.com/in/apurvsinghgautam/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.22 8h4.56v14H.22V8zM8.34 8h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v8.44h-4.56v-7.48c0-1.78-.03-4.07-2.48-4.07-2.48 0-2.86 1.94-2.86 3.94V22H8.34V8z"/></svg></a>
+      <a class="hero__social" href="https://github.com/apurvsinghgautam" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.33-1.73-1.33-1.73-1.09-.73.08-.71.08-.71 1.2.08 1.83 1.21 1.83 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.31-5.47-5.81 0-1.28.47-2.33 1.24-3.15-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.2.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.28-1.52 3.29-1.2 3.29-1.2.66 1.64.24 2.86.12 3.16.77.82 1.24 1.87 1.24 3.15 0 4.51-2.81 5.5-5.49 5.79.43.36.81 1.09.81 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.83.56C20.57 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg></a>
+      <a class="hero__social" href="https://twitter.com/ASG_Sc0rpi0n" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a class="hero__social" href="https://scholar.google.com/citations?user=KnvejewAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L1 8l11 6 7-3.82V15h2V7.16L23 6 12 2zM5 13.18v3.64L12 21l7-4.18v-3.64L12 17 5 13.18z"/></svg></a>
     </div>
   </div>
 
   <!-- ===== STATS ===== -->
-  <div style="display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.1);" class="stats">
-    <div style="padding:clamp(24px,3vw,36px) clamp(20px,5vw,44px); border-right:1px solid rgba(255,255,255,.1);"><div style="font:700 clamp(34px,4.5vw,48px)/1 'Space Grotesk'; letter-spacing:-.02em; color:#FAF8F3;">7.8K+</div><div style="margin-top:10px; font:500 11px/1 'IBM Plex Mono'; letter-spacing:.05em; color:#7A7873;">GITHUB ★ STARS</div></div>
-    <div style="padding:clamp(24px,3vw,36px) clamp(18px,3vw,32px); border-right:1px solid rgba(255,255,255,.1);"><div style="font:700 clamp(34px,4.5vw,48px)/1 'Space Grotesk'; letter-spacing:-.02em; color:#FAF8F3;">20+</div><div style="margin-top:10px; font:500 11px/1 'IBM Plex Mono'; letter-spacing:.05em; color:#7A7873;">TALKS DELIVERED</div></div>
-    <div style="padding:clamp(24px,3vw,36px) clamp(18px,3vw,32px); border-right:1px solid rgba(255,255,255,.1);"><div style="font:700 clamp(34px,4.5vw,48px)/1 'Space Grotesk'; letter-spacing:-.02em; color:#FAF8F3;">8+</div><div style="margin-top:10px; font:500 11px/1 'IBM Plex Mono'; letter-spacing:.05em; color:#7A7873;">YEARS ACTIVE</div></div>
-    <div style="padding:clamp(24px,3vw,36px) clamp(18px,3vw,32px);"><div style="font:700 clamp(34px,4.5vw,48px)/1 'Space Grotesk'; letter-spacing:-.02em; color:#FAF8F3;">42</div><div style="margin-top:10px; font:500 11px/1 'IBM Plex Mono'; letter-spacing:.05em; color:#7A7873;">CITATIONS</div></div>
+  <div class="stats">
+    <div class="stat"><div class="stat__num">7.8K+</div><div class="stat__label">GITHUB ★ STARS</div></div>
+    <div class="stat"><div class="stat__num">20+</div><div class="stat__label">TALKS DELIVERED</div></div>
+    <div class="stat"><div class="stat__num">8+</div><div class="stat__label">YEARS ACTIVE</div></div>
+    <div class="stat"><div class="stat__num">42</div><div class="stat__label">CITATIONS</div></div>
   </div>
 
   <!-- ===== 01 ABOUT ===== -->
-  <div id="about" style="padding:clamp(48px,6vw,72px) clamp(20px,5vw,72px);">
-    <div style="display:grid; grid-template-columns:160px 1fr 200px; gap:clamp(28px,4vw,48px); align-items:start;" class="about-grid">
-      <h2 style="margin:0; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC));">ABOUT</h2>
-      <div>
-        <p style="margin:0; font:300 clamp(21px,2.4vw,27px)/1.5 'Newsreader',serif; color:#E4E1DA;">Apurv Singh Gautam is a Security Analyst specializing in <span style="color:#FAF8F3; font-style:italic;">anti-scraping investigations</span> to protect Meta products and users from automated abuse, data exfiltration, and AI-enabled threats.</p>
-        <p style="margin:22px 0 0; font:400 16px/1.75 'Space Grotesk',sans-serif; color:#9C9990;">He focuses on detecting and disrupting scraping operations at scale by analyzing large datasets, building automation, and conducting investigations using OSINT, external threat intelligence, and internal telemetry to drive high-impact enforcement actions.</p>
-        <p style="margin:18px 0 0; font:400 16px/1.75 'Space Grotesk',sans-serif; color:#9C9990;">Apurv has contributed to the latest <a href="https://www.sans.org" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">SANS Institute's</a> course <a href="https://www.sans.org/cyber-security-courses/cybercrime-intelligence/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">FOR589</a> on Cybercrime Intelligence and is a contributing member of <a href="https://twitter.com/CuratedIntel" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">Curated Intel</a>. He has delivered talks &amp; workshops at national and international conferences like SANS OSINT Summit, SANS Cyber Defense Forum, DEFCON Blue Team Village, BSides Singapore, RootCon and others. Apurv is featured in major podcasts like <a href="https://itspmagazine.simplecast.com/episodes/georgia-tech-unveiled-tales-of-admission-triumphs-conversations-with-a-current-student-an-alum-off-the-record-with-saman-student-abroad-podcast2" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">ITSPMagazine</a>, <a href="https://podcasts.apple.com/us/podcast/the-recession-proof-tech-job-in-2024-meet/id1743902198?i=1000654013421" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">Tech Talks with Singh</a>, etc. He is passionate about giving back to the community and helping others get into this field, and has delivered many talks and workshops in schools and colleges. In the past, he has volunteered with <a href="https://www.stationx.net/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">StationX</a> to help students navigate into Cybersecurity, and also volunteered as a Darknet researcher at <a href="https://cti-league.com/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">CTI League</a> and <a href="https://ebcs.gsu.edu" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">EBCS</a> <a href="https://ebcs.gsu.edu/project/darknet-analysis/" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">Darknet Analysis</a> group. He holds a master's degree in Information Security from Georgia Institute of Technology, USA.</p>
-        <p style="margin:18px 0 0; font:400 15px/1.7 'Space Grotesk',sans-serif; color:#807d76;">He looks forward to the end of the day to <a href="https://www.youtube.com/@ASG.Sc0rpi0n" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">play</a> and <a href="https://www.twitch.tv/asg_sc0rpi0n" target="_blank" style="color:#D4D1CA; border-bottom:1px solid oklch(var(--accentC) / .5);">stream</a> one of the AAA games, Rainbow 6 Siege.</p>
+  <div id="about" class="about">
+    <div class="about__grid">
+      <h2 class="about__label">ABOUT</h2>
+      <div class="about__body">
+        <p>Apurv Singh Gautam is Lead, Research and Intelligence at Cyble, where he directs cybercrime and dark-web investigations that turn raw signal into finished intelligence that organizations act on. He previously worked as a Security Analyst on anti-scraping investigations at Meta, protecting products and users from large-scale automated abuse and AI-enabled threats.</p>
+        <p>He leads research and intelligence efforts across cybercrime and dark-web threats, combining hands-on investigation with automation and AI tooling that turn raw signal into finished decision-ready intelligence.</p>
+        <p>Apurv has contributed to the latest <a href="https://www.sans.org" target="_blank">SANS Institute's</a> course <a href="https://www.sans.org/cyber-security-courses/cybercrime-intelligence/" target="_blank">FOR589</a> on Cybercrime Intelligence and is a contributing member of <a href="https://twitter.com/CuratedIntel" target="_blank">Curated Intel</a>. He has delivered talks &amp; workshops at national and international conferences like SANS OSINT Summit, SANS Cyber Defense Forum, DEFCON Blue Team Village, BSides Singapore, RootCon and others. Apurv is featured in major podcasts like <a href="https://itspmagazine.simplecast.com/episodes/georgia-tech-unveiled-tales-of-admission-triumphs-conversations-with-a-current-student-an-alum-off-the-record-with-saman-student-abroad-podcast2" target="_blank">ITSPMagazine</a>, <a href="https://podcasts.apple.com/us/podcast/the-recession-proof-tech-job-in-2024-meet/id1743902198?i=1000654013421" target="_blank">Tech Talks with Singh</a>, etc. He is passionate about giving back to the community and helping others get into this field, and has delivered many talks and workshops in schools and colleges. In the past, he has volunteered with <a href="https://www.stationx.net/" target="_blank">StationX</a> to help students navigate into Cybersecurity, and also volunteered as a Darknet researcher at <a href="https://cti-league.com/" target="_blank">CTI League</a> and <a href="https://ebcs.gsu.edu" target="_blank">EBCS</a> <a href="https://ebcs.gsu.edu/project/darknet-analysis/" target="_blank">Darknet Analysis</a> group. He holds a master's degree in Information Security from Georgia Institute of Technology, USA.</p>
+        <p class="about__body--faint">He looks forward to the end of the day to <a href="https://www.youtube.com/@ASG.Sc0rpi0n" target="_blank">play</a> and <a href="https://www.twitch.tv/asg_sc0rpi0n" target="_blank">stream</a> one of the AAA games, Rainbow 6 Siege.</p>
       </div>
-      <div style="border:1px solid oklch(var(--accentC) / .25); border-radius:4px; overflow:hidden;"><img src="assets/headshot.jpg" alt="Apurv Singh Gautam" style="width:100%; display:block; filter:grayscale(.4) contrast(1.05);"></div>
+      <div class="about__photo"><img src="assets/headshot.jpg" alt="Apurv Singh Gautam"></div>
     </div>
   </div>
 
   <!-- ===== 02 MEDIA ===== -->
-  <div id="media" style="padding:0 clamp(20px,5vw,72px) clamp(48px,6vw,64px); border-top:1px solid rgba(255,255,255,.1);">
-    <div style="display:flex; justify-content:space-between; align-items:baseline; padding-top:clamp(36px,5vw,48px); margin-bottom:30px; flex-wrap:wrap; gap:12px;">
-      <div style="display:flex; gap:9px; align-items:baseline; flex-wrap:wrap;"><h2 style="margin:0; font:500 13px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC));">MEDIA</h2><span style="font:500 13px/1 'IBM Plex Mono'; letter-spacing:.04em; color:#8a8884;">(Talks, podcasts &amp; features)</span></div>
-      <div onClick="{{ openModal }}" style="cursor:pointer; font:500 12px/1 'IBM Plex Mono'; color:#8a8884; align-self:center;" style-hover="color:oklch(var(--accentBrightC));">VIEW ALL [{{ talkCount }}] →</div>
+  <div id="media" class="media">
+    <div class="section-head">
+      <div class="section-head__title-row"><h2 class="section-head__title">MEDIA</h2><span class="section-head__sub">(Talks, podcasts &amp; features)</span></div>
+      <button class="section-head__viewall" id="openMediaModal">VIEW ALL [22] →</button>
     </div>
 
-    <!-- featured -->
-    <a href="https://youtu.be/KxfAW8wPDX4" target="_blank" style="display:grid; grid-template-columns:380px 1fr; gap:30px; padding:18px; border:1px solid oklch(var(--accentC) / .3); border-radius:6px; background:linear-gradient(120deg,oklch(var(--accentC) / .07),transparent 60%); margin-bottom:18px;" style-hover="border-color:oklch(var(--accentC) / .65);" class="feat">
-      <div style="position:relative; border-radius:4px; overflow:hidden; aspect-ratio:16/9;"><img src="https://img.youtube.com/vi/KxfAW8wPDX4/hqdefault.jpg" alt="Apurv Singh Gautam on NetworkChuck — Dark Web Expert Explains How He Infiltrates Cybercrime Forums" loading="lazy" style="width:100%; height:100%; object-fit:cover;"><div style="position:absolute; left:12px; top:12px; font:600 10px/1 'IBM Plex Mono'; letter-spacing:.1em; background:oklch(var(--accentC)); color:var(--accentInk); padding:6px 10px; border-radius:2px;">★ FEATURED</div><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:54px; height:54px; border-radius:50%; background:rgba(10,10,11,.7); border:1px solid rgba(255,255,255,.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px;">▶</div></div></div>
-      <div style="align-self:center;">
-        <div style="display:flex; gap:10px; align-items:center; font:600 11px/1 'IBM Plex Mono'; letter-spacing:.06em; color:oklch(var(--accentBrightC)); margin-bottom:14px; flex-wrap:wrap;"><span>NETWORKCHUCK</span><span style="color:#56544f;">·</span><span style="color:#8a8884;">PODCAST · NOV 2025</span></div>
-        <h3 style="margin:0; font:700 clamp(20px,2.4vw,27px)/1.25 'Space Grotesk'; letter-spacing:-.01em; color:#FAF8F3;">Dark Web Expert Explains How He Infiltrates Cybercrime Forums</h3>
-        <p style="margin:13px 0 0; font-size:15px; line-height:1.6; color:#908D86;">A deep dive into HUMINT tradecraft on cybercrime forums — and the open-source tooling behind it.</p>
+    <a class="media__featured" href="https://youtu.be/KxfAW8wPDX4" target="_blank">
+      <div class="media__featured-thumb"><img src="https://img.youtube.com/vi/KxfAW8wPDX4/hqdefault.jpg" alt="Apurv Singh Gautam on NetworkChuck — Dark Web Expert Explains How He Infiltrates Cybercrime Forums" loading="lazy"><div class="media__featured-badge">★ FEATURED</div><div class="media__featured-play"><span>▶</span></div></div>
+      <div class="media__featured-body">
+        <div class="media__featured-meta"><span>NETWORKCHUCK</span><span class="sep">·</span><span class="outlet">PODCAST · NOV 2025</span></div>
+        <h3 class="media__featured-title">Dark Web Expert Explains How He Infiltrates Cybercrime Forums</h3>
+        <p class="media__featured-desc">A deep dive into HUMINT tradecraft on cybercrime forums — and the open-source tooling behind it.</p>
       </div>
     </a>
 
-    <!-- grid of 3 -->
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;" class="media-grid">
-      <a href="https://youtu.be/_KzObeom88Y" target="_blank" style="border:1px solid rgba(255,255,255,.1); border-radius:6px; overflow:hidden; background:#111012;" style-hover="border-color:oklch(var(--accentC) / .5);">
-        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;"><img src="https://img.youtube.com/vi/_KzObeom88Y/hqdefault.jpg" alt="NetworkChuck — The Dark Web EXPOSED, featuring Apurv Singh Gautam's open-source tool" loading="lazy" style="width:100%; height:100%; object-fit:cover;"><div style="position:absolute; right:10px; bottom:10px; font:600 9px/1 'IBM Plex Mono'; letter-spacing:.08em; background:rgba(10,10,11,.8); color:#E8E6E1; padding:4px 7px; border-radius:2px;">FEATURE</div></div>
-        <div style="padding:16px 18px 20px;"><div style="font:600 10px/1 'IBM Plex Mono'; letter-spacing:.06em; color:oklch(var(--accentBrightC));">NETWORKCHUCK · NOV 2025</div><div style="margin-top:10px; font:600 17px/1.3 'Space Grotesk'; color:#E8E6E1;">The Dark Web EXPOSED (Free + Open-Source Tool)</div></div>
+    <div class="media-grid">
+      <a class="media-card" href="https://youtu.be/_KzObeom88Y" target="_blank">
+        <div class="media-card__thumb"><img src="https://img.youtube.com/vi/_KzObeom88Y/hqdefault.jpg" alt="NetworkChuck — The Dark Web EXPOSED, featuring Apurv Singh Gautam's open-source tool" loading="lazy"><div class="media-card__badge">FEATURE</div></div>
+        <div class="media-card__body"><div class="media-card__meta">NETWORKCHUCK · NOV 2025</div><div class="media-card__title">The Dark Web EXPOSED (Free + Open-Source Tool)</div></div>
       </a>
-      <a href="https://youtu.be/hy1-OIhr-MU" target="_blank" style="border:1px solid rgba(255,255,255,.1); border-radius:6px; overflow:hidden; background:#111012;" style-hover="border-color:oklch(var(--accentC) / .5);">
-        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;"><img src="https://img.youtube.com/vi/hy1-OIhr-MU/hqdefault.jpg" alt="DEFCON 33 Recon Village talk — Robin: The Archaeologist of the Dark Web" loading="lazy" style="width:100%; height:100%; object-fit:cover;"><div style="position:absolute; right:10px; bottom:10px; font:600 9px/1 'IBM Plex Mono'; letter-spacing:.08em; background:rgba(10,10,11,.8); color:#E8E6E1; padding:4px 7px; border-radius:2px;">TALK</div></div>
-        <div style="padding:16px 18px 20px;"><div style="font:600 10px/1 'IBM Plex Mono'; letter-spacing:.06em; color:oklch(var(--accentBrightC));">DEFCON 33 RECON VILLAGE · AUG 2025</div><div style="margin-top:10px; font:600 17px/1.3 'Space Grotesk'; color:#E8E6E1;">Robin: The Archaeologist of the Dark Web</div></div>
+      <a class="media-card" href="https://youtu.be/hy1-OIhr-MU" target="_blank">
+        <div class="media-card__thumb"><img src="https://img.youtube.com/vi/hy1-OIhr-MU/hqdefault.jpg" alt="DEFCON 33 Recon Village talk — Robin: The Archaeologist of the Dark Web" loading="lazy"><div class="media-card__badge">TALK</div></div>
+        <div class="media-card__body"><div class="media-card__meta">DEFCON 33 RECON VILLAGE · AUG 2025</div><div class="media-card__title">Robin: The Archaeologist of the Dark Web</div></div>
       </a>
-      <a href="https://youtu.be/JYe2xSRWnRM" target="_blank" style="border:1px solid rgba(255,255,255,.1); border-radius:6px; overflow:hidden; background:#111012;" style-hover="border-color:oklch(var(--accentC) / .5);">
-        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;"><img src="https://img.youtube.com/vi/JYe2xSRWnRM/hqdefault.jpg" alt="Singh in USA podcast — The Dark Truth About Cybersecurity in 2025 with Apurv Singh Gautam" loading="lazy" style="width:100%; height:100%; object-fit:cover;"><div style="position:absolute; right:10px; bottom:10px; font:600 9px/1 'IBM Plex Mono'; letter-spacing:.08em; background:rgba(10,10,11,.8); color:#E8E6E1; padding:4px 7px; border-radius:2px;">PODCAST</div></div>
-        <div style="padding:16px 18px 20px;"><div style="font:600 10px/1 'IBM Plex Mono'; letter-spacing:.06em; color:oklch(var(--accentBrightC));">SINGH IN USA · MAR 2025</div><div style="margin-top:10px; font:600 17px/1.3 'Space Grotesk'; color:#E8E6E1;">The Dark Truth About Cybersecurity in 2025</div></div>
+      <a class="media-card" href="https://youtu.be/JYe2xSRWnRM" target="_blank">
+        <div class="media-card__thumb"><img src="https://img.youtube.com/vi/JYe2xSRWnRM/hqdefault.jpg" alt="Singh in USA podcast — The Dark Truth About Cybersecurity in 2025 with Apurv Singh Gautam" loading="lazy"><div class="media-card__badge">PODCAST</div></div>
+        <div class="media-card__body"><div class="media-card__meta">SINGH IN USA · MAR 2025</div><div class="media-card__title">The Dark Truth About Cybersecurity in 2025</div></div>
       </a>
     </div>
   </div>
 
   <!-- ===== 03 PROJECTS ===== -->
-  <div id="projects" style="padding:0 clamp(20px,5vw,72px) clamp(48px,6vw,64px); border-top:1px solid rgba(255,255,255,.1);">
-    <div style="display:flex; gap:9px; align-items:baseline; padding-top:clamp(36px,5vw,48px); margin-bottom:30px; flex-wrap:wrap;"><h2 style="margin:0; font:500 13px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC));">PROJECTS</h2><span style="font:500 13px/1 'IBM Plex Mono'; letter-spacing:.04em; color:#8a8884;">(Open-source tools)</span></div>
+  <div id="projects" class="projects">
+    <div class="section-head"><h2 class="section-head__title">PROJECTS</h2><span class="section-head__sub">(Open-source tools)</span></div>
 
-    <a href="https://github.com/apurvsinghgautam/robin" target="_blank" style="display:grid; grid-template-columns:1fr 230px; gap:36px; align-items:center; padding:clamp(26px,3vw,40px); border-radius:8px; background:linear-gradient(135deg,#161416,#0e0d0f); border:1px solid oklch(var(--accentC) / .3); margin-bottom:18px;" style-hover="border-color:oklch(var(--accentC) / .65);" class="flagship">
+    <a class="project-flagship" href="https://github.com/apurvsinghgautam/robin" target="_blank">
       <div>
-        <h3 style="margin:0; font:700 clamp(38px,5vw,54px)/1 'Space Grotesk'; letter-spacing:-.03em; color:#FAF8F3;">Robin</h3>
-        <p style="margin:16px 0 0; font-size:clamp(15px,1.6vw,17px); line-height:1.6; color:#A09D96; max-width:560px;">An AI-powered tool for dark web OSINT investigations — using LLMs to refine queries, filter results from dark web search engines, and produce an investigation summary.</p>
+        <h3 class="project-flagship__title">Robin</h3>
+        <p class="project-flagship__desc">An AI-powered tool for dark web OSINT investigations — using LLMs to refine queries, filter results from dark web search engines, and produce an investigation summary.</p>
       </div>
-      <div style="display:flex; flex-direction:column; gap:5px; align-items:flex-end; text-align:right;" class="flagship-side">
-        <div style="font:700 clamp(30px,4vw,40px)/1 'Space Grotesk'; color:oklch(var(--accentBrightC));">★ 5.5k</div>
-        <div style="font:500 11px/1.4 'IBM Plex Mono'; color:#7A7873; letter-spacing:.04em;">GITHUB STARS</div>
-        <div style="margin-top:14px; font:600 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC));">View on GitHub ↗</div>
+      <div class="project-flagship__side">
+        <div class="project-flagship__stat">★ 5.5k</div>
+        <div class="project-flagship__label">GITHUB STARS</div>
+        <div class="project-flagship__link">View on GitHub ↗</div>
       </div>
     </a>
 
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;" class="proj-grid">
-      <a href="https://github.com/apurvsinghgautam/dark-web-osint-tools" target="_blank" style="display:flex; flex-direction:column; padding:26px 24px; border:1px solid rgba(255,255,255,.1); border-radius:6px; background:#111012;" style-hover="border-color:oklch(var(--accentC) / .5);"><div style="display:flex; justify-content:space-between; align-items:center; gap:10px;"><h4 style="margin:0; font:600 20px/1.15 'Space Grotesk'; letter-spacing:-.01em; color:#E8E6E1;">Dark Web OSINT Tools</h4><span style="font:600 13px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap;">★ 2.2k</span></div><p style="margin:12px 0 0; font-size:14px; line-height:1.55; color:#807d76;">A curated list of OSINT tools for the dark web.</p></a>
-      <a href="https://github.com/apurvsinghgautam/HTTP-Reverse-Shell" target="_blank" style="display:flex; flex-direction:column; padding:26px 24px; border:1px solid rgba(255,255,255,.1); border-radius:6px; background:#111012;" style-hover="border-color:oklch(var(--accentC) / .5);"><div style="display:flex; justify-content:space-between; align-items:center; gap:10px;"><h4 style="margin:0; font:600 20px/1.15 'Space Grotesk'; letter-spacing:-.01em; color:#E8E6E1;">HTTP Reverse Shell</h4><span style="font:600 13px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap;">★ 85</span></div><p style="margin:12px 0 0; font-size:14px; line-height:1.55; color:#807d76;">Reverse shell over HTTP that dodges DPI — pure Python 3, no deps.</p></a>
-      <a href="https://github.com/apurvsinghgautam/Crawl_Analyze_Top1_Million" target="_blank" style="display:flex; flex-direction:column; padding:26px 24px; border:1px solid rgba(255,255,255,.1); border-radius:6px; background:#111012;" style-hover="border-color:oklch(var(--accentC) / .5);"><div style="display:flex; justify-content:space-between; align-items:center; gap:10px;"><h4 style="margin:0; font:600 20px/1.15 'Space Grotesk'; letter-spacing:-.01em; color:#E8E6E1;">Top 1M Domains</h4><span style="font:600 13px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap;">★ 25</span></div><p style="margin:12px 0 0; font-size:14px; line-height:1.55; color:#807d76;">Security metrics & subdomain enumeration across Majestic, Alexa, Tranco.</p></a>
+    <div class="proj-grid">
+      <a class="proj-card" href="https://github.com/apurvsinghgautam/dark-web-osint-tools" target="_blank"><div class="proj-card__head"><h4 class="proj-card__title">Dark Web OSINT Tools</h4><span class="proj-card__stars">★ 2.2k</span></div><p class="proj-card__desc">A curated list of OSINT tools for the dark web.</p></a>
+      <a class="proj-card" href="https://github.com/apurvsinghgautam/HTTP-Reverse-Shell" target="_blank"><div class="proj-card__head"><h4 class="proj-card__title">HTTP Reverse Shell</h4><span class="proj-card__stars">★ 85</span></div><p class="proj-card__desc">Reverse shell over HTTP that dodges DPI — pure Python 3, no deps.</p></a>
+      <a class="proj-card" href="https://github.com/apurvsinghgautam/Crawl_Analyze_Top1_Million" target="_blank"><div class="proj-card__head"><h4 class="proj-card__title">Top 1M Domains</h4><span class="proj-card__stars">★ 25</span></div><p class="proj-card__desc">Security metrics & subdomain enumeration across Majestic, Alexa, Tranco.</p></a>
     </div>
   </div>
 
   <!-- ===== 04 EXP / 05 RESEARCH / 06 EDU ===== -->
-  <div style="padding:0 clamp(20px,5vw,72px) clamp(48px,6vw,64px); border-top:1px solid rgba(255,255,255,.1); display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px,5vw,56px);" class="split">
+  <div class="split">
     <div id="experience">
-      <h2 style="margin:0 0 24px; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC)); padding-top:clamp(36px,5vw,48px);">EXPERIENCE</h2>
+      <h2 class="split__heading">EXPERIENCE</h2>
       <div>
-        <div style="padding:18px 0; border-bottom:1px solid rgba(255,255,255,.08);">
-          <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 18px/1.2 'Space Grotesk'; color:#FAF8F3;">Meta</div><div style="font:400 14px/1.4 'Newsreader',serif; color:#908D86;">Security Analyst · Anti-Scraping</div></div><div style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); align-self:center; white-space:nowrap;">Apr 2025 – Present</div></div>
-          <p style="margin:11px 0 0; font:400 13.5px/1.6 'Space Grotesk'; color:#8b8881; max-width:97%;">Detecting and disrupting scraping operations at scale — analyzing large datasets, building automation, and running OSINT-driven investigations to drive high-impact enforcement against automated abuse.</p>
+        <div class="exp-row">
+          <div class="exp-row__head"><div><div class="exp-company exp-company--current">Cyble Inc.</div><div class="exp-role">Lead, Research and Intelligence · Atlanta</div></div><div class="exp-date exp-date--current">Aug 2026 – Present</div></div>
+          <p class="exp-desc">Leading research and intelligence efforts across cybercrime and dark-web threats — from investigation through automation to decision-ready reporting.</p>
         </div>
-        <div style="padding:18px 0; border-bottom:1px solid rgba(255,255,255,.08);">
-          <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 18px/1.2 'Space Grotesk'; color:#E8E6E1;">Cyble Inc.</div><div style="font:400 14px/1.4 'Newsreader',serif; color:#908D86;">Sr. Threat Research Analyst · Austin</div></div><div style="font:500 12px/1 'IBM Plex Mono'; color:#7A7873; align-self:center; white-space:nowrap;">Apr 2023 – Nov 2025</div></div>
-          <p style="margin:11px 0 0; font:400 13.5px/1.6 'Space Grotesk'; color:#8b8881; max-width:97%;">Delivered tactical and operational intelligence on client RFIs, served as SME for Generative-AI threat-intel projects, and curated OSINT/SOCMINT/HUMINT investigations into actionable, IOC- and TTP-enriched deliverables.</p>
+        <div class="exp-row">
+          <div class="exp-row__head"><div><div class="exp-company">Meta</div><div class="exp-role">Security Analyst · Washington DC</div></div><div class="exp-date">Apr 2026 – Jul 2026</div></div>
+          <p class="exp-desc">Detecting and disrupting scraping operations at scale — analyzing large datasets, building automation, and running OSINT-driven investigations to drive high-impact enforcement against automated abuse.</p>
         </div>
-        <div style="padding:18px 0; border-bottom:1px solid rgba(255,255,255,.08);">
-          <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 18px/1.2 'Space Grotesk'; color:#E8E6E1;">Cyble Inc.</div><div style="font:400 14px/1.4 'Newsreader',serif; color:#908D86;">Threat Researcher · Atlanta</div></div><div style="font:500 12px/1 'IBM Plex Mono'; color:#7A7873; align-self:center; white-space:nowrap;">Jul 2021 – Mar 2023</div></div>
-          <p style="margin:11px 0 0; font:400 13.5px/1.6 'Space Grotesk'; color:#8b8881; max-width:97%;">Ran surface and dark web investigations, profiled threat actors and ransomware groups, and built Python automation that cut data-collection time by 40%.</p>
+        <div class="exp-row">
+          <div class="exp-row__head"><div><div class="exp-company">Cyble Inc.</div><div class="exp-role">Sr. Threat Research Analyst · Austin</div></div><div class="exp-date">Apr 2023 – Nov 2025</div></div>
+          <p class="exp-desc">Delivered tactical and operational intelligence on client RFIs, served as SME for Generative-AI threat-intel projects, and curated OSINT/SOCMINT/HUMINT investigations into actionable, IOC- and TTP-enriched deliverables.</p>
         </div>
-        <div style="padding:18px 0; border-bottom:1px solid rgba(255,255,255,.08);">
-          <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 18px/1.2 'Space Grotesk'; color:#E8E6E1;">ICSI, UC Berkeley</div><div style="font:400 14px/1.4 'Newsreader',serif; color:#908D86;">Security Research Intern · Berkeley</div></div><div style="font:500 12px/1 'IBM Plex Mono'; color:#7A7873; align-self:center; white-space:nowrap;">May – Jul 2020</div></div>
-          <p style="margin:11px 0 0; font:400 13.5px/1.6 'Space Grotesk'; color:#8b8881; max-width:97%;">Deep-dived malicious data from dark web forums and markets, applied NLP (LDA, CatE) to large unstructured datasets, and generated six threat-intelligence metrics.</p>
+        <div class="exp-row">
+          <div class="exp-row__head"><div><div class="exp-company">Cyble Inc.</div><div class="exp-role">Threat Researcher · Atlanta</div></div><div class="exp-date">Jul 2021 – Mar 2023</div></div>
+          <p class="exp-desc">Ran surface and dark web investigations, profiled threat actors and ransomware groups, and built Python automation that cut data-collection time by 40%.</p>
         </div>
-        <div style="padding:18px 0;">
-          <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 18px/1.2 'Space Grotesk'; color:#E8E6E1;">Volon Cyber Security</div><div style="font:400 14px/1.4 'Newsreader',serif; color:#908D86;">Security Researcher · Pune</div></div><div style="font:500 12px/1 'IBM Plex Mono'; color:#7A7873; align-self:center; white-space:nowrap;">May 2018 – May 2019</div></div>
-          <p style="margin:11px 0 0; font:400 13.5px/1.6 'Space Grotesk'; color:#8b8881; max-width:97%;">Performed OSINT and HUMINT across 20+ dark web forums and markets, and designed an automated Scrapy-based scraping tool feeding Elasticsearch.</p>
+        <div class="exp-row">
+          <div class="exp-row__head"><div><div class="exp-company">ICSI, UC Berkeley</div><div class="exp-role">Security Research Intern · Berkeley</div></div><div class="exp-date">May – Jul 2020</div></div>
+          <p class="exp-desc">Deep-dived malicious data from dark web forums and markets, applied NLP (LDA, CatE) to large unstructured datasets, and generated six threat-intelligence metrics.</p>
+        </div>
+        <div class="exp-row">
+          <div class="exp-row__head"><div><div class="exp-company">Volon Cyber Security</div><div class="exp-role">Security Researcher · Pune</div></div><div class="exp-date">May 2018 – May 2019</div></div>
+          <p class="exp-desc">Performed OSINT and HUMINT across 20+ dark web forums and markets, and designed an automated Scrapy-based scraping tool feeding Elasticsearch.</p>
         </div>
       </div>
     </div>
     <div>
-      <h2 id="research" style="margin:0 0 24px; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC)); padding-top:clamp(36px,5vw,48px);">RESEARCH</h2>
-      <div style="display:flex; flex-direction:column; gap:0;">
-        <a href="https://www.researchgate.net/publication/373072960_Applying_Threat_Intelligence_Metrics_on_the_Dark_Web_data" target="_blank" style="padding:0 0 16px; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="opacity:.7;"><div style="font:400 18px/1.35 'Newsreader',serif; color:#E8E6E1;">Applying Threat Intelligence Metrics on the Dark Web Data</div><div style="margin-top:7px; font:500 11px/1 'IBM Plex Mono'; color:#7A7873;">RESEARCH PAPER · DARK WEB CTI & NLP</div></a>
-        <a href="https://www.researchgate.net/publication/337000698_Hacker_Forum_Exploit_and_Classification_for_Proactive_Cyber_Threat_Intelligence" target="_blank" style="padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="opacity:.7;"><div style="font:400 18px/1.35 'Newsreader',serif; color:#E8E6E1;">Hacker Forum Exploit & Classification for Proactive CTI</div><div style="margin-top:7px; font:500 11px/1 'IBM Plex Mono'; color:#7A7873;">RESEARCH PAPER · DARK WEB CTI & ML</div></a>
-        <a href="https://www.researchgate.net/publication/326774451_Recent_Trends_in_the_Era_of_Cybercrime_and_the_Measures_to_Control_Them" target="_blank" style="padding:16px 0;" style-hover="opacity:.7;"><div style="font:400 18px/1.35 'Newsreader',serif; color:#E8E6E1;">Recent Trends in the Era of Cybercrime & Measures to Control Them</div><div style="margin-top:7px; font:500 11px/1 'IBM Plex Mono'; color:#7A7873;">BOOK CHAPTER · e-BUSINESS SECURITY</div></a>
+      <h2 id="research" class="split__heading">RESEARCH</h2>
+      <div>
+        <a class="research-item" href="https://www.researchgate.net/publication/373072960_Applying_Threat_Intelligence_Metrics_on_the_Dark_Web_data" target="_blank"><div class="research-item__title">Applying Threat Intelligence Metrics on the Dark Web Data</div><div class="research-item__meta">RESEARCH PAPER · DARK WEB CTI & NLP</div></a>
+        <a class="research-item" href="https://www.researchgate.net/publication/337000698_Hacker_Forum_Exploit_and_Classification_for_Proactive_Cyber_Threat_Intelligence" target="_blank"><div class="research-item__title">Hacker Forum Exploit & Classification for Proactive CTI</div><div class="research-item__meta">RESEARCH PAPER · DARK WEB CTI & ML</div></a>
+        <a class="research-item" href="https://www.researchgate.net/publication/326774451_Recent_Trends_in_the_Era_of_Cybercrime_and_the_Measures_to_Control_Them" target="_blank"><div class="research-item__title">Recent Trends in the Era of Cybercrime & Measures to Control Them</div><div class="research-item__meta">BOOK CHAPTER · e-BUSINESS SECURITY</div></a>
       </div>
-      <h2 id="education" style="margin:36px 0 0; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC)); padding-top:30px; border-top:1px solid rgba(255,255,255,.1);">EDUCATION</h2>
-      <div style="margin-top:18px; display:flex; flex-direction:column; gap:14px;">
-        <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 17px/1.2 'Space Grotesk'; color:#E8E6E1;">Georgia Institute of Technology</div><div style="font:400 13px/1.4 'Newsreader',serif; color:#908D86;">M.S. Cybersecurity · GPA 3.78/4.0</div></div><div style="font:500 12px/1 'IBM Plex Mono'; color:#7A7873; align-self:center;">USA</div></div>
-        <div style="display:grid; grid-template-columns:1fr auto; gap:10px;"><div><div style="font:600 17px/1.2 'Space Grotesk'; color:#E8E6E1;">Symbiosis Institute of Technology</div><div style="font:400 13px/1.4 'Newsreader',serif; color:#908D86;">B.Tech, Information Technology · GPA 8.63/10</div></div><div style="font:500 12px/1 'IBM Plex Mono'; color:#7A7873; align-self:center;">IND</div></div>
+      <h2 id="education" class="split__heading split__heading--sub">EDUCATION</h2>
+      <div class="edu-list">
+        <div class="edu-row"><div><div class="edu-school">Georgia Institute of Technology</div><div class="edu-degree">M.S. Cybersecurity · GPA 3.78/4.0</div></div><div class="edu-country">USA</div></div>
+        <div class="edu-row"><div><div class="edu-school">Symbiosis Institute of Technology</div><div class="edu-degree">B.Tech, Information Technology · GPA 8.63/10</div></div><div class="edu-country">IND</div></div>
       </div>
     </div>
   </div>
 
   <!-- ===== 07 BLOG (A-style) ===== -->
-  <div id="blog" style="padding:0 clamp(20px,5vw,72px) clamp(40px,5vw,56px); border-top:1px solid rgba(255,255,255,.1);">
-    <div style="display:flex; justify-content:space-between; align-items:baseline; padding-top:clamp(36px,5vw,48px); margin-bottom:26px; flex-wrap:wrap; gap:12px;">
-      <div style="display:flex; gap:9px; align-items:baseline; flex-wrap:wrap;"><h2 style="margin:0; font:500 12px/1 'IBM Plex Mono'; letter-spacing:.1em; color:oklch(var(--accentBrightC));">WRITING</h2><span style="font:500 13px/1 'IBM Plex Mono'; letter-spacing:.04em; color:#8a8884;">(Blog &amp; research notes)</span></div>
-      <div onClick="{{ openBlog }}" style="cursor:pointer; font:500 12px/1 'IBM Plex Mono'; color:#8a8884; align-self:center;" style-hover="color:oklch(var(--accentBrightC));">VIEW ALL [{{ postCount }}] →</div>
+  <div id="blog" class="blog-teaser">
+    <div class="section-head">
+      <div class="section-head__title-row"><h2 class="section-head__title">WRITING</h2><span class="section-head__sub">(Blog &amp; research notes)</span></div>
+      <button class="section-head__viewall" id="openBlogModal">VIEW ALL [10] →</button>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0 clamp(28px,4vw,48px);" class="blog-grid">
+    <div class="blog-grid">
       <!--BLOG:TEASER:START-->
-      <a href="https://apurvsinghgautam.me/blog/Anonymous%20Traffic%20Network.pdf" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">Anonymous Traffic Network</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">PRIVACY</span></a>
-      <a href="https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How To Safely Access The Dark Web</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">OSINT</span></a>
-      <a href="https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">How to Start in Cybersecurity</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">CAREER</span></a>
-      <a href="https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">Why Having an Online Portfolio is Important?</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">CAREER</span></a>
+      <a class="teaser-row" href="https://apurvsinghgautam.me/blog/Anonymous%20Traffic%20Network.pdf" target="_blank"><span class="teaser-row__title">Anonymous Traffic Network</span><span class="teaser-row__tag">PRIVACY</span></a>
+      <a class="teaser-row" href="https://ransom-isac.com/blog/ransomware-leak-collection-analysis/" target="_blank"><span class="teaser-row__title">Ransomware Leak Collection &amp; Analysis</span><span class="teaser-row__tag">MALWARE</span></a>
+      <a class="teaser-row" href="https://www.sans.org/blog/undercover-operations-scraping-the-cybercrime-underground" target="_blank"><span class="teaser-row__title">Undercover Operations: Scraping the Cybercrime Underground</span><span class="teaser-row__tag">OSINT</span></a>
+      <a class="teaser-row" href="https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/" target="_blank"><span class="teaser-row__title">How To Safely Access The Dark Web</span><span class="teaser-row__tag">OSINT</span></a>
       <!--BLOG:TEASER:END-->
     </div>
   </div>
 
   <!-- ===== TALKS MODAL ===== -->
-  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ closeModal }}" style="position:fixed; inset:0; z-index:100; background:rgba(5,5,6,.84); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:clamp(14px,4vw,56px);">
-      <div onClick="{{ stopProp }}" style="width:min(920px,100%); max-height:88vh; display:flex; flex-direction:column; background:#0E0D0F; border:1px solid rgba(255,255,255,.14); border-radius:10px; overflow:hidden; box-shadow:0 40px 100px rgba(0,0,0,.6);">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.1);">
-          <div style="display:flex; gap:14px; align-items:baseline; flex-wrap:wrap;"><span style="font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.1em; color:oklch(var(--accentBrightC));">FULL LOG</span><span style="font:700 clamp(17px,2.4vw,21px)/1 'Space Grotesk'; color:#FAF8F3;">Talks, podcasts &amp; features</span></div>
-          <div onClick="{{ closeModal }}" style="cursor:pointer; flex-shrink:0; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.18); border-radius:5px; color:#E8E6E1; font:400 17px/1 'Space Grotesk';" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC));">✕</div>
-        </div>
-        <div style="display:flex; gap:8px; padding:16px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.08); flex-wrap:wrap;">
-          <sc-for list="{{ chips }}" as="chip" hint-placeholder-count="5">
-            <div onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</div>
-          </sc-for>
-        </div>
-        <div style="overflow-y:auto; padding:6px 0;">
-          <sc-for list="{{ talks }}" as="t" hint-placeholder-count="8">
-            <a href="{{ t.url }}" target="_blank" style="display:grid; grid-template-columns:84px 1fr 96px; gap:clamp(12px,2vw,20px); align-items:center; padding:15px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.06);" style-hover="background:rgba(255,255,255,.03);" class="talkrow">
-              <span style="font:500 12px/1 'IBM Plex Mono',monospace; color:#7A7873;">{{ t.date }}</span>
-              <span><span style="display:block; font:600 15px/1.35 'Space Grotesk'; color:#E8E6E1;">{{ t.title }}</span><span style="font:400 12px/1.4 'IBM Plex Mono',monospace; color:#8a8884;">{{ t.outlet }}</span></span>
-              <span class="talkcat" style="font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:oklch(var(--accentBrightC)); justify-self:end; border:1px solid oklch(var(--accentC) / .3); padding:5px 9px; border-radius:2px; white-space:nowrap;">{{ t.cat }}</span>
-            </a>
-          </sc-for>
-        </div>
+  <div class="modal-overlay" id="mediaModal" hidden>
+    <div class="modal">
+      <div class="modal__head">
+        <div class="modal__head-row"><span class="modal__head-label">FULL LOG</span><span class="modal__head-title">Talks, podcasts &amp; features</span></div>
+        <button class="modal__close" id="closeMediaModal">✕</button>
+      </div>
+      <div class="modal__chips" id="mediaChips">
+        <button class="chip is-active" data-filter="All">ALL</button>
+        <button class="chip" data-filter="Talk">TALKS</button>
+        <button class="chip" data-filter="Podcast">PODCASTS</button>
+        <button class="chip" data-filter="Workshop">WORKSHOPS</button>
+        <button class="chip" data-filter="Seminar">SEMINARS</button>
+      </div>
+      <div class="modal__list" id="mediaList">
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/KxfAW8wPDX4" target="_blank"><span class="modal-row__date">Nov 2025</span><span><span class="modal-row__title">Dark Web Expert Explains How He Infiltrates Cybercrime Forums</span><span class="modal-row__outlet">NetworkChuck</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/_KzObeom88Y" target="_blank"><span class="modal-row__date">Nov 2025</span><span><span class="modal-row__title">The Dark Web EXPOSED (Free + Open-Source Tool)</span><span class="modal-row__outlet">NetworkChuck</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://youtu.be/hy1-OIhr-MU" target="_blank"><span class="modal-row__date">Aug 2025</span><span><span class="modal-row__title">Robin: The Archaeologist of the Dark Web</span><span class="modal-row__outlet">DEFCON 33 Recon Village</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/JYe2xSRWnRM" target="_blank"><span class="modal-row__date">Mar 2025</span><span><span class="modal-row__title">The Dark Truth About Cybersecurity in 2025 (Ft. AI Threat Intel Expert)</span><span class="modal-row__outlet">Singh in USA</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/4MwWBSKqSaI" target="_blank"><span class="modal-row__date">Mar 2024</span><span><span class="modal-row__title">Georgia Tech Unveiled: Tales of Admission Triumphs</span><span class="modal-row__outlet">ITSPmagazine</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/s0I0PhxsTSc" target="_blank"><span class="modal-row__date">Feb 2024</span><span><span class="modal-row__title">The Recession-Proof Tech Job in 2024 — Meet a Cybersecurity Hacker</span><span class="modal-row__outlet">Singh in USA</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://github.com/apurvsinghgautam/conference-talks" target="_blank"><span class="modal-row__date">Sep 2022</span><span><span class="modal-row__title">Diving into the Underground Market of Stealer Logs</span><span class="modal-row__outlet">Texas Cyber Summit</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Workshop" href="https://github.com/apurvsinghgautam/conference-talks" target="_blank"><span class="modal-row__date">Aug 2022</span><span><span class="modal-row__title">Practical Dark Web Hunting Using Automated Scripts</span><span class="modal-row__outlet">DEFCON Blue Team Village</span></span><span class="modal-row__cat">Workshop</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/N3XFtGhyfp0" target="_blank"><span class="modal-row__date">Oct 2021</span><span><span class="modal-row__title">Darknet and OSINT</span><span class="modal-row__outlet">CyberPreserve</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/DzyY4D27RnM" target="_blank"><span class="modal-row__date">Oct 2021</span><span><span class="modal-row__title">Meet Cyber Security Engineers! Ft. Google & Cyble Engineers</span><span class="modal-row__outlet">Singh in USA</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://youtu.be/D3V6uV4Iu0c" target="_blank"><span class="modal-row__date">Apr 2021</span><span><span class="modal-row__title">Hack Your Growth — #LevelUp (Panel)</span><span class="modal-row__outlet">SANS New to Cyber Summit</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://youtu.be/ywUxkvCK96w" target="_blank"><span class="modal-row__date">Feb 2021</span><span><span class="modal-row__title">OSINT Tools for Diving Deep into the Dark Web</span><span class="modal-row__outlet">SANS OSINT Summit</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://youtu.be/LywwMq--VS0" target="_blank"><span class="modal-row__date">Oct 2020</span><span><span class="modal-row__title">Automating Threat Hunting on the Dark Web</span><span class="modal-row__outlet">SANS Cyber Defense Forum</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://youtu.be/jE_Lak6xrg0" target="_blank"><span class="modal-row__date">Aug 2020</span><span><span class="modal-row__title">Automating Threat Hunting on the Dark Web</span><span class="modal-row__outlet">DEFCON 28 Red Team Village</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Talk" href="https://youtu.be/VFtK3r1LAjs" target="_blank"><span class="modal-row__date">Jul 2020</span><span><span class="modal-row__title">Threat Hunting on the Dark Web</span><span class="modal-row__outlet">GrimmCon 0x2</span></span><span class="modal-row__cat">Talk</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/8sFcTgxTXDg" target="_blank"><span class="modal-row__date">Jul 2020</span><span><span class="modal-row__title">Career, Scope & Future of Cybersecurity</span><span class="modal-row__outlet">YudiJ</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Podcast" href="https://youtu.be/tSxDMqKjvIk" target="_blank"><span class="modal-row__date">Jun 2020</span><span><span class="modal-row__title">How to do Masters in USA Under $5000</span><span class="modal-row__outlet">YudiJ</span></span><span class="modal-row__cat">Podcast</span></a>
+        <a class="modal-row" data-cat="Seminar" href="https://youtu.be/Kvc8fVijZow" target="_blank"><span class="modal-row__date">Oct 2019</span><span><span class="modal-row__title">304 in GRE: Georgia Tech & 4 Other Top Admits</span><span class="modal-row__outlet">GREedge</span></span><span class="modal-row__cat">Seminar</span></a>
+        <a class="modal-row" data-cat="Seminar" href="https://github.com/apurvsinghgautam/conference-talks" target="_blank"><span class="modal-row__date">Apr 2019</span><span><span class="modal-row__title">All About Cyber Security — From an MS Student's Perspective</span><span class="modal-row__outlet">Symbiosis Institute of Technology</span></span><span class="modal-row__cat">Seminar</span></a>
+        <a class="modal-row" data-cat="Seminar" href="https://github.com/apurvsinghgautam/conference-talks" target="_blank"><span class="modal-row__date">Jun 2018</span><span><span class="modal-row__title">Seminar on Cyber Security Fundamentals</span><span class="modal-row__outlet">SIT Summer School</span></span><span class="modal-row__cat">Seminar</span></a>
+        <a class="modal-row" data-cat="Seminar" href="https://github.com/apurvsinghgautam/conference-talks" target="_blank"><span class="modal-row__date">Feb 2018</span><span><span class="modal-row__title">LogOut Cybersecurity Awareness Seminar</span><span class="modal-row__outlet">Maharashtra Institute of Technology</span></span><span class="modal-row__cat">Seminar</span></a>
+        <a class="modal-row" data-cat="Seminar" href="https://github.com/apurvsinghgautam/conference-talks" target="_blank"><span class="modal-row__date">Jul 2017</span><span><span class="modal-row__title">2-Day Seminar on Cybersecurity Fundamentals</span><span class="modal-row__outlet">The Aryan International School</span></span><span class="modal-row__cat">Seminar</span></a>
       </div>
     </div>
-  </sc-if>
+  </div>
 
   <!-- ===== BLOG MODAL ===== -->
-  <sc-if value="{{ blogOpen }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ closeBlog }}" style="position:fixed; inset:0; z-index:100; background:rgba(5,5,6,.84); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:clamp(14px,4vw,56px);">
-      <div onClick="{{ stopProp }}" style="width:min(920px,100%); max-height:88vh; display:flex; flex-direction:column; background:#0E0D0F; border:1px solid rgba(255,255,255,.14); border-radius:10px; overflow:hidden; box-shadow:0 40px 100px rgba(0,0,0,.6);">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.1);">
-          <div style="display:flex; gap:14px; align-items:baseline; flex-wrap:wrap;"><span style="font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.1em; color:oklch(var(--accentBrightC));">FULL ARCHIVE</span><span style="font:700 clamp(17px,2.4vw,21px)/1 'Space Grotesk'; color:#FAF8F3;">Blog &amp; research notes</span></div>
-          <div onClick="{{ closeBlog }}" style="cursor:pointer; flex-shrink:0; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.18); border-radius:5px; color:#E8E6E1; font:400 17px/1 'Space Grotesk';" style-hover="border-color:oklch(var(--accentC) / .6); color:oklch(var(--accentBrightC));">✕</div>
-        </div>
-        <div style="display:flex; gap:8px; padding:16px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.08); flex-wrap:wrap;">
-          <sc-for list="{{ blogChips }}" as="chip" hint-placeholder-count="5">
-            <div onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</div>
-          </sc-for>
-        </div>
-        <div style="overflow-y:auto; padding:6px 0;">
-          <sc-for list="{{ posts }}" as="p" hint-placeholder-count="7">
-            <a href="{{ p.url }}" target="_blank" style="display:grid; grid-template-columns:84px 1fr 110px; gap:clamp(12px,2vw,20px); align-items:center; padding:15px clamp(18px,3vw,28px); border-bottom:1px solid rgba(255,255,255,.06);" style-hover="background:rgba(255,255,255,.03);" class="talkrow">
-              <span style="font:500 12px/1 'IBM Plex Mono',monospace; color:#7A7873;">{{ p.date }}</span>
-              <span><span style="display:block; font:600 15px/1.35 'Space Grotesk'; color:#E8E6E1;">{{ p.title }}</span><span style="font:400 12px/1.4 'IBM Plex Mono',monospace; color:#8a8884;">{{ p.read }}</span></span>
-              <span class="talkcat" style="font:500 10px/1 'IBM Plex Mono',monospace; letter-spacing:.06em; color:oklch(var(--accentBrightC)); justify-self:end; border:1px solid oklch(var(--accentC) / .3); padding:5px 9px; border-radius:2px; white-space:nowrap;">{{ p.cat }}</span>
-            </a>
-          </sc-for>
-        </div>
+  <div class="modal-overlay" id="blogModal" hidden>
+    <div class="modal">
+      <div class="modal__head">
+        <div class="modal__head-row"><span class="modal__head-label">FULL ARCHIVE</span><span class="modal__head-title">Blog &amp; research notes</span></div>
+        <button class="modal__close" id="closeBlogModal">✕</button>
+      </div>
+      <div class="modal__chips" id="blogChips">
+        <button class="chip is-active" data-filter="All">ALL</button>
+        <button class="chip" data-filter="OSINT">OSINT</button>
+        <button class="chip" data-filter="Malware">MALWARE</button>
+        <button class="chip" data-filter="Career">CAREER</button>
+        <button class="chip" data-filter="Forensics">FORENSICS</button>
+      </div>
+      <div class="modal__list" id="blogList">
+        <!--BLOG:POSTS:START-->
+        <a class="modal-row modal-row--blog" data-cat="Malware" href="https://ransom-isac.com/blog/ransomware-leak-collection-analysis/" target="_blank"><span class="modal-row__date">Feb 2026</span><span><span class="modal-row__title">Ransomware Leak Collection &amp; Analysis</span><span class="modal-row__outlet">RANSOM-ISAC</span></span><span class="modal-row__cat">Malware</span></a>
+        <a class="modal-row modal-row--blog" data-cat="OSINT" href="https://www.sans.org/blog/undercover-operations-scraping-the-cybercrime-underground" target="_blank"><span class="modal-row__date">Jan 2025</span><span><span class="modal-row__title">Undercover Operations: Scraping the Cybercrime Underground</span><span class="modal-row__outlet">SANS</span></span><span class="modal-row__cat">OSINT</span></a>
+        <a class="modal-row modal-row--blog" data-cat="OSINT" href="https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/" target="_blank"><span class="modal-row__date">Sep 2020</span><span><span class="modal-row__title">How To Safely Access The Dark Web</span><span class="modal-row__outlet">5 min read</span></span><span class="modal-row__cat">OSINT</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Career" href="https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/" target="_blank"><span class="modal-row__date">Jul 2020</span><span><span class="modal-row__title">How to Start in Cybersecurity</span><span class="modal-row__outlet">2 min read</span></span><span class="modal-row__cat">Career</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Career" href="https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/" target="_blank"><span class="modal-row__date">May 2020</span><span><span class="modal-row__title">Why Having an Online Portfolio is Important?</span><span class="modal-row__outlet">2 min read</span></span><span class="modal-row__cat">Career</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Malware" href="https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/" target="_blank"><span class="modal-row__date">May 2020</span><span><span class="modal-row__title">WannaCry Ransomware Analysis through Diamond Model</span><span class="modal-row__outlet">8 min read</span></span><span class="modal-row__cat">Malware</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Privacy" href="https://apurvsinghgautam.me/blog/Anonymous%20Traffic%20Network.pdf" target="_blank"><span class="modal-row__date">May 2020</span><span><span class="modal-row__title">Anonymous Traffic Network</span><span class="modal-row__outlet">PDF</span></span><span class="modal-row__cat">Privacy</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Career" href="https://apurvsinghgautam.me/blog/how-i-started-my-journey-into-cybersecurity/" target="_blank"><span class="modal-row__date">Apr 2020</span><span><span class="modal-row__title">How I Started my Journey in Cybersecurity</span><span class="modal-row__outlet">3 min read</span></span><span class="modal-row__cat">Career</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Forensics" href="https://apurvsinghgautam.me/blog/insights-into-bitcoin-forensics/" target="_blank"><span class="modal-row__date">Jan 2018</span><span><span class="modal-row__title">Insights into Bitcoin Forensics</span><span class="modal-row__outlet">2 min read</span></span><span class="modal-row__cat">Forensics</span></a>
+        <a class="modal-row modal-row--blog" data-cat="Malware" href="https://apurvsinghgautam.me/blog/wannacry-ransomware/" target="_blank"><span class="modal-row__date">Apr 2017</span><span><span class="modal-row__title">WannaCry Ransomware</span><span class="modal-row__outlet">3 min read</span></span><span class="modal-row__cat">Malware</span></a>
+        <!--BLOG:POSTS:END-->
       </div>
     </div>
-  </sc-if>
+  </div>
 
   <!-- ===== FOOTER ===== -->
-  <div style="padding:clamp(32px,4vw,40px) clamp(20px,5vw,72px); border-top:1px solid rgba(255,255,255,.1); display:flex; justify-content:space-between; align-items:center; background:#08080A; flex-wrap:wrap; gap:16px;">
-    <span style="font:500 12px/1.5 'IBM Plex Mono'; color:#7A7873;">// END OF FILE — © 2026 APURV SINGH GAUTAM</span>
-    <div style="display:flex; gap:22px; font:500 12px/1 'IBM Plex Mono'; color:#9b988f;">
-      <a href="https://www.linkedin.com/in/apurvsinghgautam/" target="_blank" style-hover="color:oklch(var(--accentBrightC));">LINKEDIN</a>
-      <a href="https://github.com/apurvsinghgautam" target="_blank" style-hover="color:oklch(var(--accentBrightC));">GITHUB</a>
-      <a href="https://x.com/ASG_Sec" target="_blank" style-hover="color:oklch(var(--accentBrightC));">X</a>
-      <a href="https://scholar.google.com/" target="_blank" style-hover="color:oklch(var(--accentBrightC));">SCHOLAR</a>
+  <div class="site-footer">
+    <span class="site-footer__note">// END OF FILE — © 2026 APURV SINGH GAUTAM</span>
+    <div class="site-footer__links">
+      <a href="https://www.linkedin.com/in/apurvsinghgautam/" target="_blank">LINKEDIN</a>
+      <a href="https://github.com/apurvsinghgautam" target="_blank">GITHUB</a>
+      <a href="https://x.com/ASG_Sec" target="_blank">X</a>
+      <a href="https://scholar.google.com/" target="_blank">SCHOLAR</a>
     </div>
   </div>
 
   <!-- ===== BACK TO TOP ===== -->
-  <sc-if value="{{ showTop }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ scrollTop }}" title="Back to top" style="position:fixed; right:clamp(16px,4vw,32px); bottom:clamp(16px,4vw,32px); z-index:90; width:46px; height:46px; display:flex; align-items:center; justify-content:center; cursor:pointer; border:1px solid oklch(var(--accentC) / .5); border-radius:8px; background:rgba(10,10,11,.82); backdrop-filter:blur(8px); color:oklch(var(--accentBrightC)); font:600 18px/1 'Space Grotesk';" style-hover="background:oklch(var(--accentC) / .14); border-color:oklch(var(--accentC) / .9);">↑</div>
-  </sc-if>
+  <button class="back-to-top" id="backToTop" title="Back to top" hidden>↑</button>
 
-  <style>
-    @media (max-width:860px){
-      .hero-grid{grid-template-columns:1fr !important;}
-      .stats{grid-template-columns:repeat(2,1fr) !important;}
-      .about-grid{grid-template-columns:1fr !important;}
-      .feat{grid-template-columns:1fr !important;}
-      .media-grid{grid-template-columns:1fr !important;}
-      .flagship{grid-template-columns:1fr !important;}
-      .flagship-side{border-left:none !important; border-top:1px solid rgba(255,255,255,.12) !important; padding-left:0 !important; padding-top:24px !important; flex-direction:row !important; gap:36px !important;}
-      .proj-grid{grid-template-columns:1fr !important;}
-      .split{grid-template-columns:1fr !important;}
-      .blog-grid{grid-template-columns:1fr !important;}
-      .talkrow{grid-template-columns:62px 1fr !important; gap:4px 14px !important;}
-      .talkrow .talkcat{grid-column:2 !important; justify-self:start !important; margin-top:5px !important;}
-      /* collapsing mobile menu */
-      .nav-toggle{display:flex !important;}
-      .nav-links{position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:flex-start; gap:0 !important; background:rgba(10,10,11,.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.1); box-shadow:0 24px 48px rgba(0,0,0,.5); display:none !important;}
-      .navbar[data-navopen="true"] .nav-links{display:flex !important;}
-      .nav-links a{width:100%; padding:15px clamp(20px,5vw,72px); font-size:13px !important; border-top:1px solid rgba(255,255,255,.06);}
-    }
-    @media (max-width:430px){
-      .flagship-side{flex-direction:column !important; align-items:flex-start !important; text-align:left !important; gap:5px !important;}
-    }
-    @media (min-width:560px){ .sb-mid{display:block !important;} }
-  </style>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Red&quot;,&quot;options&quot;:[&quot;Amber&quot;,&quot;Cyan&quot;,&quot;Red&quot;,&quot;Green&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;mood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Editorial&quot;,&quot;options&quot;:[&quot;Editorial&quot;,&quot;Console&quot;,&quot;Blackout&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;display&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Mono Caps&quot;,&quot;options&quot;:[&quot;Mono Caps&quot;,&quot;Editorial Serif&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;}}">
-class Component extends DCLogic {
-  state = { modalOpen: false, filter: 'All', showTop: false, navOpen: false, blogOpen: false, blogFilter: 'All' };
-
-  componentDidMount() {
-    this._onScroll = () => {
-      const v = window.scrollY > 400;
-      if (v !== this.state.showTop) this.setState({ showTop: v });
-    };
-    window.addEventListener('scroll', this._onScroll, { passive: true });
-    this._onScroll();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this._onScroll);
-  }
-
-  allTalks() {
-    return [
-      { date:'Nov 2025', cat:'Podcast',  outlet:'NetworkChuck',                      title:'Dark Web Expert Explains How He Infiltrates Cybercrime Forums', url:'https://youtu.be/KxfAW8wPDX4' },
-      { date:'Nov 2025', cat:'Podcast',  outlet:'NetworkChuck',                      title:'The Dark Web EXPOSED (Free + Open-Source Tool)',               url:'https://youtu.be/_KzObeom88Y' },
-      { date:'Aug 2025', cat:'Talk',     outlet:'DEFCON 33 Recon Village',           title:'Robin: The Archaeologist of the Dark Web',                    url:'https://youtu.be/hy1-OIhr-MU' },
-      { date:'Mar 2025', cat:'Podcast',  outlet:'Singh in USA',                      title:'The Dark Truth About Cybersecurity in 2025 (Ft. AI Threat Intel Expert)', url:'https://youtu.be/JYe2xSRWnRM' },
-      { date:'Mar 2024', cat:'Podcast',  outlet:'ITSPmagazine',                      title:'Georgia Tech Unveiled: Tales of Admission Triumphs',          url:'https://youtu.be/4MwWBSKqSaI' },
-      { date:'Feb 2024', cat:'Podcast',  outlet:'Singh in USA',                      title:'The Recession-Proof Tech Job in 2024 — Meet a Cybersecurity Hacker', url:'https://youtu.be/s0I0PhxsTSc' },
-      { date:'Sep 2022', cat:'Talk',     outlet:'Texas Cyber Summit',                title:'Diving into the Underground Market of Stealer Logs',          url:'https://github.com/apurvsinghgautam/conference-talks' },
-      { date:'Aug 2022', cat:'Workshop', outlet:'DEFCON Blue Team Village',          title:'Practical Dark Web Hunting Using Automated Scripts',          url:'https://github.com/apurvsinghgautam/conference-talks' },
-      { date:'Oct 2021', cat:'Podcast',  outlet:'CyberPreserve',                     title:'Darknet and OSINT',                                           url:'https://youtu.be/N3XFtGhyfp0' },
-      { date:'Oct 2021', cat:'Podcast',  outlet:'Singh in USA',                      title:'Meet Cyber Security Engineers! Ft. Google & Cyble Engineers', url:'https://youtu.be/DzyY4D27RnM' },
-      { date:'Apr 2021', cat:'Talk',     outlet:'SANS New to Cyber Summit',          title:'Hack Your Growth — #LevelUp (Panel)',                         url:'https://youtu.be/D3V6uV4Iu0c' },
-      { date:'Feb 2021', cat:'Talk',     outlet:'SANS OSINT Summit',                 title:'OSINT Tools for Diving Deep into the Dark Web',               url:'https://youtu.be/ywUxkvCK96w' },
-      { date:'Oct 2020', cat:'Talk',     outlet:'SANS Cyber Defense Forum',          title:'Automating Threat Hunting on the Dark Web',                   url:'https://youtu.be/LywwMq--VS0' },
-      { date:'Aug 2020', cat:'Talk',     outlet:'DEFCON 28 Red Team Village',        title:'Automating Threat Hunting on the Dark Web',                   url:'https://youtu.be/jE_Lak6xrg0' },
-      { date:'Jul 2020', cat:'Talk',     outlet:'GrimmCon 0x2',                      title:'Threat Hunting on the Dark Web',                              url:'https://youtu.be/VFtK3r1LAjs' },
-      { date:'Jul 2020', cat:'Podcast',  outlet:'YudiJ',                             title:'Career, Scope & Future of Cybersecurity',                     url:'https://youtu.be/8sFcTgxTXDg' },
-      { date:'Jun 2020', cat:'Podcast',  outlet:'YudiJ',                             title:'How to do Masters in USA Under $5000',                        url:'https://youtu.be/tSxDMqKjvIk' },
-      { date:'Oct 2019', cat:'Seminar',  outlet:'GREedge',                           title:'304 in GRE: Georgia Tech & 4 Other Top Admits',               url:'https://youtu.be/Kvc8fVijZow' },
-      { date:'Apr 2019', cat:'Seminar',  outlet:'Symbiosis Institute of Technology', title:'All About Cyber Security — From an MS Student\'s Perspective', url:'https://github.com/apurvsinghgautam/conference-talks' },
-      { date:'Jun 2018', cat:'Seminar',  outlet:'SIT Summer School',                 title:'Seminar on Cyber Security Fundamentals',                      url:'https://github.com/apurvsinghgautam/conference-talks' },
-      { date:'Feb 2018', cat:'Seminar',  outlet:'Maharashtra Institute of Technology', title:'LogOut Cybersecurity Awareness Seminar',                    url:'https://github.com/apurvsinghgautam/conference-talks' },
-      { date:'Jul 2017', cat:'Seminar',  outlet:'The Aryan International School',     title:'2-Day Seminar on Cybersecurity Fundamentals',                 url:'https://github.com/apurvsinghgautam/conference-talks' },
-    ];
-  }
-
-  allPosts() {
-    return [
-      //BLOG:POSTS:START
-      { date:'Sep 2020', read:'5 min read', cat:'OSINT', title:"How To Safely Access The Dark Web", url:'https://apurvsinghgautam.me/blog/how-to-safely-access-the-dark-web/' },
-      { date:'Jul 2020', read:'2 min read', cat:'Career', title:"How to Start in Cybersecurity", url:'https://apurvsinghgautam.me/blog/how-to-start-in-cybersecurity/' },
-      { date:'May 2020', read:'2 min read', cat:'Career', title:"Why Having an Online Portfolio is Important?", url:'https://apurvsinghgautam.me/blog/why-having-an-online-portfolio-is-important/' },
-      { date:'May 2020', read:'8 min read', cat:'Malware', title:"WannaCry Ransomware Analysis through Diamond Model", url:'https://apurvsinghgautam.me/blog/wannacry-ransomware-analysis-through-diamond-model/' },
-      { date:'May 2020', read:'PDF', cat:'Privacy', title:"Anonymous Traffic Network", url:'https://apurvsinghgautam.me/blog/Anonymous%20Traffic%20Network.pdf' },
-      { date:'Apr 2020', read:'3 min read', cat:'Career', title:"How I Started my Journey in Cybersecurity", url:'https://apurvsinghgautam.me/blog/how-i-started-my-journey-into-cybersecurity/' },
-      { date:'Jan 2018', read:'2 min read', cat:'Forensics', title:"Insights into Bitcoin Forensics", url:'https://apurvsinghgautam.me/blog/insights-into-bitcoin-forensics/' },
-      { date:'Apr 2017', read:'3 min read', cat:'Malware', title:"WannaCry Ransomware", url:'https://apurvsinghgautam.me/blog/wannacry-ransomware/' },
-      //BLOG:POSTS:END
-    ];
-  }
-
-  renderVals() {
-    const cats = ['All', 'Talk', 'Podcast', 'Workshop', 'Seminar'];
-    const filter = this.state.filter;
-    const base = "cursor:pointer; font:500 11px/1 'IBM Plex Mono',monospace; letter-spacing:.04em; padding:8px 15px; border-radius:3px; transition:all .15s;";
-    const chips = cats.map(c => ({
-      label: c === 'All' ? 'ALL' : (c + 's').toUpperCase(),
-      style: base + (filter === c
-        ? 'background:oklch(var(--accentBrightC)); color:var(--accentInk); border:1px solid transparent;'
-        : 'background:transparent; color:#9b988f; border:1px solid rgba(255,255,255,.16);'),
-      onClick: () => this.setState({ filter: c }),
-    }));
-    const talks = filter === 'All' ? this.allTalks() : this.allTalks().filter(t => t.cat === filter);
-
-    const blogFilter = this.state.blogFilter;
-    const blogCats = ['All', 'OSINT', 'Malware', 'Career', 'Forensics'];
-    const blogChips = blogCats.map(c => ({
-      label: c.toUpperCase(),
-      style: base + (blogFilter === c
-        ? 'background:oklch(var(--accentBrightC)); color:var(--accentInk); border:1px solid transparent;'
-        : 'background:transparent; color:#9b988f; border:1px solid rgba(255,255,255,.16);'),
-      onClick: () => this.setState({ blogFilter: c }),
-    }));
-    const posts = blogFilter === 'All' ? this.allPosts() : this.allPosts().filter(p => p.cat === blogFilter);
-    const accent = (this.props.accent || 'Amber').toLowerCase();
-    const moodRaw = (this.props.mood || 'Editorial').toLowerCase();
-    const displayRaw = (this.props.display || 'Mono Caps').toLowerCase();
-    return {
-      theme: ['amber', 'cyan', 'red', 'green'].includes(accent) ? accent : 'amber',
-      mood: ['editorial', 'console', 'blackout'].includes(moodRaw) ? moodRaw : 'editorial',
-      display: displayRaw.indexOf('editorial') === 0 ? 'editorial' : 'mono',
-      modalOpen: this.state.modalOpen,
-      showTop: this.state.showTop,
-      navOpen: this.state.navOpen,
-      navLabel: this.state.navOpen ? 'CLOSE ✕' : 'MENU ≡',
-      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
-      closeNav: () => this.setState({ navOpen: false }),
-      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
-      openModal: () => this.setState({ modalOpen: true, filter: 'All' }),
-      closeModal: () => this.setState({ modalOpen: false }),
-      stopProp: (e) => e.stopPropagation(),
-      chips,
-      talks,
-      talkCount: this.allTalks().length,
-      blogOpen: this.state.blogOpen,
-      openBlog: () => this.setState({ blogOpen: true, blogFilter: 'All' }),
-      closeBlog: () => this.setState({ blogOpen: false }),
-      blogChips,
-      posts,
-      postCount: this.allPosts().length,
-    };
-  }
-}
-</script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

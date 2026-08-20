@@ -32,8 +32,10 @@ interface Post {
   html: string;
   headings: { id: string; text: string }[];
   url: string;
-  /** Set when the entry links out (e.g. a PDF) instead of generating a page. */
+  /** Set when the entry links out (e.g. a PDF or an off-site post) instead of generating a page. */
   external?: string;
+  /** Badge shown for an external entry. Defaults to "PDF" so existing entries are unchanged. */
+  externalLabel?: string;
   /** Pinned into the portfolio teaser regardless of date. */
   featured: boolean;
 }
@@ -42,6 +44,13 @@ interface Post {
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+/** Badge text for an entry: explicit label, else "PDF" for external, else reading time. */
+const badge = (p: Post, unit: string) =>
+  p.external ? (p.externalLabel ?? "PDF") : `${p.minutes}${unit}`;
+
+/** Absolute form of an entry url — external entries may already be absolute. */
+const absUrl = (u: string) => (/^https?:\/\//i.test(u) ? u : `${site.url}${u}`);
 
 /** Slug matching kramdown's auto-generated heading ids, so old anchor links keep working. */
 function slugify(text: string): string {
@@ -196,6 +205,7 @@ function loadPosts(): Post[] {
       headings: [...headings],
       url: data.external ? String(data.external) : `${site.baseurl}/${slug}/`,
       external: data.external ? String(data.external) : undefined,
+      externalLabel: data.externalLabel ? String(data.externalLabel) : undefined,
       featured: data.featured === true,
     });
   }
@@ -229,7 +239,7 @@ function buildIndex(posts: Post[], tpl: string): string {
           (p) => `  <a class="entry" href="${p.external ?? p.url}"${p.external ? ' target="_blank" rel="noopener"' : ""} data-cat="${p.chip}">
     <span class="entry__date">${fmtShort(p.date)}</span>
     <span class="entry__title">${esc(p.title)}</span>
-    <span class="entry__tag">${p.chip} &middot; ${p.external ? "PDF" : `${p.minutes} MIN`}</span>
+    <span class="entry__tag">${p.chip} &middot; ${badge(p, " MIN")}</span>
   </a>`,
         )
         .join("\n");
@@ -402,28 +412,29 @@ function syncPortfolioTeaser(posts: Post[], count = teaserCount): void {
     .slice(0, count)
     .map(
       (p) =>
-        `<a href="${site.url}${p.url}" target="_blank" style="display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);" style-hover="background:rgba(255,255,255,.02);"><span style="font-size:16px; color:#D4D1CA;">${esc(p.title)}</span><span style="font:500 11px/1 'IBM Plex Mono'; color:oklch(var(--accentBrightC)); white-space:nowrap; align-self:center;">${p.chip}</span></a>`,
+        `<a class="teaser-row" href="${absUrl(p.url)}" target="_blank"><span class="teaser-row__title">${esc(p.title)}</span><span class="teaser-row__tag">${p.chip}</span></a>`,
     )
     .join("\n      ");
 
   html = html.slice(0, s + START.length) + "\n      " + rows + "\n      " + html.slice(e);
 
-  // The modal's allPosts() array — the list VIEW ALL renders. Hardcoded in the
-  // design export, so without this every new post would need a manual edit here.
-  const PS = "//BLOG:POSTS:START";
-  const PE = "//BLOG:POSTS:END";
+  // The "VIEW ALL" modal's full post list — pre-rendered static rows (plain
+  // HTML/JS homepage, no build-time templating there), so without this every
+  // new post would need a manual edit to index.html.
+  const PS = "<!--BLOG:POSTS:START-->";
+  const PE = "<!--BLOG:POSTS:END-->";
   const ps = html.indexOf(PS);
   const pe = html.indexOf(PE);
   if (ps === -1 || pe === -1) {
-    console.warn("  note: allPosts() markers missing — modal list not synced");
+    console.warn("  note: BLOG:POSTS markers missing — modal list not synced");
   } else {
     const entries = posts
       .map(
         (p) =>
-          `      { date:'${fmtShortMixed(p.date)}', read:'${p.external ? "PDF" : `${p.minutes} min read`}', cat:'${chipDisplay(p.chip)}', title:${JSON.stringify(p.title)}, url:'${site.url}${p.url}' },`,
+          `        <a class="modal-row modal-row--blog" data-cat="${chipDisplay(p.chip)}" href="${absUrl(p.url)}" target="_blank"><span class="modal-row__date">${fmtShortMixed(p.date)}</span><span><span class="modal-row__title">${esc(p.title)}</span><span class="modal-row__outlet">${badge(p, " min read")}</span></span><span class="modal-row__cat">${chipDisplay(p.chip)}</span></a>`,
       )
       .join("\n");
-    html = html.slice(0, ps + PS.length) + "\n" + entries + "\n      " + html.slice(pe);
+    html = html.slice(0, ps + PS.length) + "\n" + entries + "\n        " + html.slice(pe);
   }
 
   writeFileSync(indexPath, html);
