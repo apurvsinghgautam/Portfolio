@@ -503,7 +503,7 @@ img { max-width: 100%; }
 
 @media (max-width: 620px) {
   .entry { grid-template-columns: 1fr auto; gap: 6px 14px; align-items: start; }
-  .entry__date { grid-row: 2; align-self: center; }
+  .entry__date { grid-row: 2; align-self: center; white-space: nowrap; }
   .entry__title { grid-column: 1 / -1; }
   .entry__tag { grid-row: 2; grid-column: 2; }
   .pager { grid-template-columns: 1fr; }
