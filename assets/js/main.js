@@ -47,10 +47,25 @@
   }
 
   // ---------- modal open/close ----------
+  // While a popup is open, <html> carries .has-modal (overflow hidden in site.css)
+  // so the page behind can't scroll. The scrollbar's width is padded back in on
+  // desktop so the layout doesn't shift when it disappears.
+  var root = document.documentElement;
+  function lockPage() {
+    var gap = window.innerWidth - root.clientWidth;
+    root.classList.add("has-modal");
+    if (gap > 0) root.style.paddingRight = gap + "px";
+  }
+  function unlockPage() {
+    if (document.querySelector(".modal-overlay:not([hidden])")) return;
+    root.classList.remove("has-modal");
+    root.style.paddingRight = "";
+  }
+
   function wireModal(openBtn, overlay, closeBtn) {
     if (!openBtn || !overlay) return;
-    openBtn.addEventListener("click", function () { overlay.hidden = false; });
-    var close = function () { overlay.hidden = true; };
+    openBtn.addEventListener("click", function () { overlay.hidden = false; lockPage(); });
+    var close = function () { overlay.hidden = true; unlockPage(); };
     if (closeBtn) closeBtn.addEventListener("click", close);
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) close(); // click on the dim backdrop, not the panel
