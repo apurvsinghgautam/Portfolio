@@ -464,33 +464,26 @@ img { max-width: 100%; }
 
 .site-root { background: var(--ground); color: var(--ink); font-family: var(--sans); min-height: 100vh; }
 
-/* ---------- top status bar ---------- */
-.site-statusbar {
-  position: sticky; top: 0; z-index: 20;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px clamp(20px, 5vw, 72px);
-  border-bottom: 1px solid var(--rule);
-  font: 500 11px/1 var(--mono);
-  letter-spacing: .06em;
-  color: var(--ink-faint);
-  background: rgba(10, 10, 11, .86);
-  backdrop-filter: blur(10px);
-}
-.site-statusbar__live { display: flex; align-items: center; gap: 9px; }
-.site-statusbar__dot { width: 7px; height: 7px; border-radius: 50%; background: oklch(var(--accentC)); box-shadow: 0 0 10px oklch(var(--accentC)); }
-.site-statusbar__mid { display: none; }
-.site-statusbar__mid b { color: oklch(var(--accentBrightC)); font-weight: 500; }
-@media (min-width: 560px) { .site-statusbar__mid { display: block; } }
+/* Land in-page anchors below the sticky nav (~67px desktop, ~69px mobile). */
+#about, #media, #projects, #experience, #research, #education, #blog { scroll-margin-top: 84px; }
+
+/* Keep a short last line from dangling on its own where the browser supports it. */
+.hero__kicker, .section-head__sub, .media__featured-title, .media-card__title, .media-card__meta, .research-item__meta, .project-flagship__title,
+.proj-card__title, .exp-company, .exp-role, .research-item__title, .edu-school, .edu-degree,
+.teaser-row__title, .modal__head-title, .modal-row__title, .site-footer__note { text-wrap: balance; }
+.hero__lede, .about__body p, .media__featured-desc, .project-flagship__desc, .proj-card__desc, .exp-desc { text-wrap: pretty; }
 
 /* ---------- nav ---------- */
 .site-nav {
-  position: sticky; top: 31px; z-index: 19;
+  position: sticky; top: 0; z-index: 19;
   display: flex; justify-content: space-between; align-items: center;
   padding: 18px clamp(20px, 5vw, 72px);
   background: rgba(10, 10, 11, .86);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule-soft);
 }
+.site-nav__home { display: block; }
 .site-nav__logo { height: 30px; width: auto; display: block; }
 .site-nav__links { display: flex; gap: clamp(14px, 2vw, 30px); font: 500 12px/1 var(--mono); letter-spacing: .03em; color: #8a8884; }
 .site-nav__links a:hover { color: oklch(var(--accentBrightC)); }
@@ -514,11 +507,7 @@ img { max-width: 100%; }
 }
 .hero__kicker { position: relative; font: 500 12px/1 var(--mono); letter-spacing: .1em; color: oklch(var(--accentBrightC)); margin-bottom: 30px; }
 .hero__title { position: relative; margin: 0; font: 700 clamp(48px, 9vw, 98px)/0.98 var(--sans); letter-spacing: -.03em; color: var(--ink-bright); }
-.hero__grid { position: relative; display: grid; grid-template-columns: 1fr 290px; gap: 48px; margin-top: 42px; align-items: end; }
-.hero__lede { margin: 0; font-size: clamp(16px, 1.7vw, 19px); line-height: 1.7; color: var(--ink-body); max-width: 640px; }
-.hero__meta { font: 500 12px/1.85 var(--mono); color: var(--ink-faint); border-left: 1px solid oklch(var(--accentC) / .4); padding-left: 20px; }
-.hero__meta b { color: var(--ink-mid); font-weight: 500; }
-.hero__meta .is-active { color: oklch(var(--accentBrightC)); }
+.hero__lede { position: relative; margin: 42px 0 0; font-size: clamp(16px, 1.7vw, 19px); line-height: 1.7; color: var(--ink-body); max-width: 640px; }
 .hero__connect { position: relative; display: flex; gap: 12px; margin-top: 40px; align-items: center; flex-wrap: wrap; }
 .hero__connect-label { font: 500 11px/1 var(--mono); letter-spacing: .12em; color: var(--ink-faint); margin-right: 4px; }
 .hero__social {
@@ -659,13 +648,21 @@ img { max-width: 100%; }
 .teaser-row__tag { font: 500 11px/1 var(--mono); color: oklch(var(--accentBrightC)); white-space: nowrap; align-self: center; }
 
 /* ---------- modals (MEDIA "view all" / BLOG "view all") ---------- */
+/* main.js adds .has-modal to <html> while a popup is open so the page behind can't scroll. */
+html.has-modal, html.has-modal body { overflow: hidden; }
 .modal-overlay {
-  position: fixed; inset: 0; z-index: 100; background: rgba(5, 5, 6, .84); backdrop-filter: blur(6px);
+  position: fixed; inset: 0; z-index: 100; background: rgba(5, 5, 6, .84);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   display: flex; align-items: center; justify-content: center; padding: clamp(14px, 4vw, 56px);
+  overscroll-behavior: contain;
 }
 .modal-overlay[hidden] { display: none; }
 .modal {
-  width: min(920px, 100%); max-height: 88vh; display: flex; flex-direction: column;
+  width: min(920px, 100%);
+  max-height: 88vh;
+  max-height: 88dvh; /* follows iOS Safari's toolbar as it shows and hides */
+  display: flex; flex-direction: column;
   background: #0E0D0F; border: 1px solid rgba(255, 255, 255, .14); border-radius: 10px;
   overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, .6);
 }
@@ -680,7 +677,7 @@ img { max-width: 100%; }
 }
 .modal__close:hover { border-color: oklch(var(--accentC) / .6); color: oklch(var(--accentBrightC)); }
 .modal__chips { display: flex; gap: 8px; padding: 16px clamp(18px, 3vw, 28px); border-bottom: 1px solid var(--rule-soft); flex-wrap: wrap; }
-.modal__list { overflow-y: auto; padding: 6px 0; }
+.modal__list { overflow-y: auto; padding: 6px 0; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 .modal-row {
   display: grid; grid-template-columns: 84px 1fr 96px; gap: clamp(12px, 2vw, 20px); align-items: center;
   padding: 15px clamp(18px, 3vw, 28px); border-bottom: 1px solid rgba(255, 255, 255, .06);
@@ -706,9 +703,10 @@ img { max-width: 100%; }
 
 /* ---------- back to top ---------- */
 .back-to-top {
-  position: fixed; right: clamp(16px, 4vw, 32px); bottom: clamp(16px, 4vw, 32px); z-index: 90;
+  position: fixed; right: clamp(16px, 4vw, 32px); bottom: calc(clamp(16px, 4vw, 32px) + env(safe-area-inset-bottom, 0px)); z-index: 90;
   width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; cursor: pointer;
   border: 1px solid oklch(var(--accentC) / .5); border-radius: 8px; background: rgba(10, 10, 11, .82);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px); color: oklch(var(--accentBrightC)); font: 600 18px/1 var(--sans);
 }
 .back-to-top:hover { background: oklch(var(--accentC) / .14); border-color: oklch(var(--accentC) / .9); }
@@ -716,7 +714,6 @@ img { max-width: 100%; }
 
 /* ---------- homepage responsive ---------- */
 @media (max-width: 860px) {
-  .hero__grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .about__grid { grid-template-columns: 1fr; }
   .media__featured { grid-template-columns: 1fr; }
@@ -728,15 +725,49 @@ img { max-width: 100%; }
   .blog-grid { grid-template-columns: 1fr; }
   .modal-row { grid-template-columns: 62px 1fr; gap: 4px 14px; }
   .modal-row .modal-row__cat { grid-column: 2; justify-self: start; margin-top: 5px; }
-  .site-nav__toggle { display: flex; }
+
+  /* nav: 44px tap targets, padding trimmed so the bar stays ~69px tall */
+  .site-nav { padding-top: 12px; padding-bottom: 12px; }
+  .site-nav__home { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; margin-left: -7px; }
+  .site-nav__toggle { display: flex; min-height: 44px; padding: 0 14px; }
   .site-nav__links {
     position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0;
-    background: rgba(10, 10, 11, .97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, .1);
+    background: rgba(10, 10, 11, .97);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, .1);
     box-shadow: 0 24px 48px rgba(0, 0, 0, .5); display: none;
   }
   .site-nav.is-open .site-nav__links { display: flex; }
-  .site-nav__links a { width: 100%; padding: 15px clamp(20px, 5vw, 72px); font-size: 13px; border-top: 1px solid rgba(255, 255, 255, .06); }
+  .site-nav__links a { display: flex; align-items: center; width: 100%; min-height: 48px; padding: 0 clamp(20px, 5vw, 72px); font-size: 13px; border-top: 1px solid rgba(255, 255, 255, .06); }
+
+  /* other tap targets */
+  .section-head__viewall { display: inline-flex; align-items: center; min-height: 44px; padding: 0 0 0 12px; margin-right: -2px; }
+  .site-footer__links { gap: 10px; flex-wrap: wrap; }
+  .site-footer__links a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 6px; }
+  .site-footer__links a:first-child { margin-left: -6px; }
+  .modal__close { width: 44px; height: 44px; }
+  /* explicit values so popup chips don't depend on the blog's base .chip rule */
+  .modal__chips .chip { display: inline-flex; align-items: center; min-height: 44px; padding: 0 15px; font-size: 12px; line-height: 1; }
+
+  /* no text under 12px on phones */
+  .hero__connect-label, .stat__label, .media__featured-badge, .media__featured-meta, .media-card__badge,
+  .media-card__meta, .project-flagship__label, .project-flagship__link, .exp-date--current,
+  .research-item__meta, .teaser-row__tag, .modal__head-label, .modal-row__cat { font-size: 12px; }
+  .media-card__badge { letter-spacing: .06em; }
+
+  /* mono labels set at line-height 1 need room when they wrap */
+  .hero__kicker, .stat__label, .section-head__title, .section-head__sub, .media__featured-meta,
+  .media-card__meta, .research-item__meta, .exp-date, .edu-country, .teaser-row__tag,
+  .modal__head-label, .modal__head-title, .modal-row__date, .site-footer__links { line-height: 1.4; }
+  .hero__kicker { margin-bottom: 26px; }
 }
 @media (max-width: 430px) {
   .project-flagship__side { flex-direction: column; align-items: flex-start; text-align: left; gap: 5px; }
+}
+/* Short landscape phones: give the popup list the height, not the chrome. */
+@media (max-height: 500px) {
+  .modal-overlay { padding: 8px clamp(14px, 4vw, 56px); }
+  .modal { max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); }
+  .modal__head { padding-top: 6px; padding-bottom: 6px; }
+  .modal__chips { padding-top: 6px; padding-bottom: 6px; }
 }
