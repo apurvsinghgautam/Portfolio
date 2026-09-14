@@ -51,6 +51,12 @@
 .article h2,
 .article h3 { overflow-wrap: break-word; }
 
+/* Keep a lone word off the last line of short titles where supported. */
+.entry__title,
+.post-head__title,
+.index-head__title,
+.pager__title { text-wrap: balance; }
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -67,36 +73,8 @@ img { max-width: 100%; }
 
 /* ---------- chrome ---------- */
 
-.statusbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 10px var(--gutter);
-  border-bottom: 1px solid var(--rule);
-  font: 500 11px/1 var(--mono);
-  letter-spacing: .06em;
-  color: var(--ink-faint);
-  background: rgba(10, 10, 11, .86);
-  backdrop-filter: blur(10px);
-}
-
-.statusbar__live { display: flex; align-items: center; gap: 9px; min-width: 0; }
-.statusbar__path { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-.statusbar__dot {
-  flex: none;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: oklch(var(--accentC));
-  box-shadow: 0 0 10px oklch(var(--accentC));
-}
-
 .masthead {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,6 +96,21 @@ img { max-width: 100%; }
 
 .masthead__nav a:hover { color: var(--ink-mid); }
 .masthead__nav .is-current { color: oklch(var(--accentBrightC)); }
+
+/* Mirrors the portfolio's .site-nav__toggle; shown only at the mobile breakpoint. */
+.masthead__toggle {
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  font: 600 12px/1 var(--mono);
+  letter-spacing: .08em;
+  color: var(--ink-mid);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 6px;
+  padding: 9px 13px;
+  background: transparent;
+}
 
 /* ---------- index ---------- */
 
@@ -259,7 +252,7 @@ img { max-width: 100%; }
 .rail {
   align-self: start;
   position: sticky;
-  top: 96px;
+  top: 32px;
   font: 500 11px/1.9 var(--mono);
   color: var(--ink-faint);
   border-left: 1px solid oklch(var(--accentC) / .4);
@@ -267,6 +260,9 @@ img { max-width: 100%; }
 }
 
 .rail__label { letter-spacing: .06em; }
+/* CONTENTS is a <details> so it can collapse on mobile; on desktop it reads as a plain label. */
+.rail__toc > summary { list-style: none; cursor: default; }
+.rail__toc > summary::-webkit-details-marker { display: none; }
 .rail__list { margin: 0 0 18px; }
 .rail__list a { color: var(--ink-mid); display: block; }
 .rail__list a:hover { color: var(--ink-bright); }
@@ -295,14 +291,14 @@ img { max-width: 100%; }
   font: 600 24px/1.25 var(--sans);
   letter-spacing: -.01em;
   color: var(--ink-bright);
-  scroll-margin-top: 96px;
+  scroll-margin-top: 24px;
 }
 
 .article h3 {
   margin: 28px 0 12px;
   font: 600 19px/1.3 var(--sans);
   color: var(--ink-bright);
-  scroll-margin-top: 96px;
+  scroll-margin-top: 24px;
 }
 
 .article a { color: oklch(var(--accentBrightC)); border-bottom: 1px solid oklch(var(--accentC) / .35); }
@@ -432,15 +428,76 @@ img { max-width: 100%; }
 /* ---------- responsive ---------- */
 
 @media (max-width: 860px) {
-  .post-body { grid-template-columns: 1fr; }
-  .rail {
-    position: static;
-    border-left: 0;
-    border-top: 1px solid oklch(var(--accentC) / .4);
-    padding: 16px 0 0;
-    order: 2;
+  /* Header collapses behind a MENU toggle, same breakpoint and pattern as the portfolio nav. */
+  .masthead__home { display: flex; align-items: center; min-width: 44px; min-height: 44px; }
+  .masthead__toggle { display: flex; min-height: 44px; }
+  .masthead__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    background: rgba(10, 10, 11, .97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, .5);
   }
+  .masthead.is-open .masthead__nav { display: flex; }
+  .masthead__nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 14px var(--gutter);
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+  }
+
+  /* Unwrap the rail so CONTENTS comes before the article and SHARE after it. */
+  .post-body { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+  .rail { display: contents; }
+  .rail__toc { border-top: 1px solid oklch(var(--accentC) / .4); border-bottom: 1px solid var(--rule-soft); }
+  .rail__toc > summary { display: flex; justify-content: space-between; align-items: center; min-height: 44px; cursor: pointer; }
+  .rail__toc > summary::after { content: "+"; font-size: 16px; color: oklch(var(--accentBrightC)); }
+  .rail__toc[open] > summary::after { content: "\2212"; }
+  .rail__list { margin: 0 0 8px; }
+  .rail__list a { display: flex; align-items: center; min-height: 44px; line-height: 1.35; }
   .article { order: 1; max-width: none; }
+  .rail__share {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid oklch(var(--accentC) / .4);
+    padding-top: 8px;
+  }
+  .rail__share a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+
+  /* Tap targets: at least 44px on every standalone link and button. */
+  .chip { display: inline-flex; align-items: center; min-height: 44px; }
+  .breadcrumb { margin-bottom: 12px; }
+  .breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; }
+  .tagrow a { display: inline-flex; align-items: center; min-height: 44px; }
+  .pager__cell a { display: block; min-height: 44px; }
+  .footer__social { gap: 6px; }
+  .footer__social a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+
+  /* Nothing under 12px on small screens. */
+  .kicker,
+  .chip,
+  .entries__year,
+  .entry__tag,
+  .breadcrumb,
+  .post-meta,
+  .rail,
+  .tagrow a,
+  .pager__label,
+  .footer,
+  .article .codepanel__bar,
+  .article th { font-size: 12px; }
 }
 
 @media (max-width: 620px) {
@@ -448,8 +505,6 @@ img { max-width: 100%; }
   .entry__date { grid-row: 2; align-self: center; }
   .entry__title { grid-column: 1 / -1; }
   .entry__tag { grid-row: 2; grid-column: 2; }
-  .statusbar { font-size: 10px; }
-  .masthead { flex-direction: column; align-items: flex-start; gap: 12px; }
   .pager { grid-template-columns: 1fr; }
   .pager__cell--next { text-align: left; }
 }

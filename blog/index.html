@@ -35,20 +35,12 @@
 </head>
 <body>
 
-<div class="statusbar">
-  <span class="statusbar__live">
-    <span class="statusbar__dot"></span>
-    <span class="statusbar__path">FILE://WRITING</span>
-  </span>
-  <span>ENTRIES: 10</span>
-</div>
-
-<div class="masthead">
-  <a href="https://apurvsinghgautam.me/" aria-label="Apurv Singh Gautam — home">
+<div class="masthead" id="masthead">
+  <a class="masthead__home" href="https://apurvsinghgautam.me/" aria-label="Apurv Singh Gautam — home">
     <img class="masthead__logo" src="/blog/assets/img/logo.png" alt="ASG">
   </a>
   <!-- Order and items must mirror the portfolio's nav exactly. -->
-  <nav class="masthead__nav">
+  <nav class="masthead__nav" id="mastheadNav">
     <a href="https://apurvsinghgautam.me/#about">ABOUT</a>
     <a href="https://apurvsinghgautam.me/#media">MEDIA</a>
     <a href="https://apurvsinghgautam.me/#projects">PROJECTS</a>
@@ -56,6 +48,7 @@
     <a href="https://apurvsinghgautam.me/#research">RESEARCH</a>
     <a href="/blog/" class="is-current">BLOG</a>
   </nav>
+  <button class="masthead__toggle" id="mastheadToggle" type="button" aria-label="Menu" aria-controls="mastheadNav" aria-expanded="false">MENU ≡</button>
 </div>
 
 <main class="shell">
@@ -143,6 +136,23 @@
 </footer>
 
 <script>
+  // Mobile header menu. Same behaviour as the portfolio nav (assets/js/main.js),
+  // which blog pages do not load.
+  (function () {
+    var head = document.getElementById('masthead');
+    var toggle = document.getElementById('mastheadToggle');
+    var nav = document.getElementById('mastheadNav');
+    if (!head || !toggle || !nav) return;
+    function setOpen(open) {
+      head.classList.toggle('is-open', open);
+      toggle.textContent = open ? 'CLOSE ✕' : 'MENU ≡';
+      toggle.setAttribute('aria-expanded', String(open));
+    }
+    toggle.addEventListener('click', function () { setOpen(!head.classList.contains('is-open')); });
+    // Close the menu after tapping a nav link.
+    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+  })();
+
   (function () {
     var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
     if (!chips.length) return;

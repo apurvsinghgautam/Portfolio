@@ -41,7 +41,10 @@ jobs:
           test -f blog/index.html
           test -f blog/tags/index.html
           test -f assets/css/site.css
-          grep -q 'FILE://WRITING' blog/index.html
+          # A broken or empty index renders no entry rows.
+          entries=$(grep -o 'class="entry"' blog/index.html | wc -l)
+          echo "index entries: $entries"
+          test "$entries" -ge 1
           posts=$(find blog -mindepth 1 -maxdepth 1 -type d ! -name assets ! -name tags | wc -l)
           echo "post directories: $posts"
           test "$posts" -ge 1

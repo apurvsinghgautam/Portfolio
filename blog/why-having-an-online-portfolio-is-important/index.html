@@ -38,20 +38,12 @@
 </head>
 <body>
 
-<div class="statusbar">
-  <span class="statusbar__live">
-    <span class="statusbar__dot"></span>
-    <span class="statusbar__path">FILE://WRITING/CAREER</span>
-  </span>
-  <span>TLP:CLEAR</span>
-</div>
-
-<div class="masthead">
-  <a href="https://apurvsinghgautam.me/" aria-label="Apurv Singh Gautam — home">
+<div class="masthead" id="masthead">
+  <a class="masthead__home" href="https://apurvsinghgautam.me/" aria-label="Apurv Singh Gautam — home">
     <img class="masthead__logo" src="/blog/assets/img/logo.png" alt="ASG">
   </a>
   <!-- Order and items must mirror the portfolio's nav exactly. -->
-  <nav class="masthead__nav">
+  <nav class="masthead__nav" id="mastheadNav">
     <a href="https://apurvsinghgautam.me/#about">ABOUT</a>
     <a href="https://apurvsinghgautam.me/#media">MEDIA</a>
     <a href="https://apurvsinghgautam.me/#projects">PROJECTS</a>
@@ -59,6 +51,7 @@
     <a href="https://apurvsinghgautam.me/#research">RESEARCH</a>
     <a href="/blog/" class="is-current">BLOG</a>
   </nav>
+  <button class="masthead__toggle" id="mastheadToggle" type="button" aria-label="Menu" aria-controls="mastheadNav" aria-expanded="false">MENU ≡</button>
 </div>
 
 <main class="shell">
@@ -75,10 +68,28 @@
 
   <div class="post-body">
     <aside class="rail">
-      <div class="rail__label">CONTENTS</div>
-      <nav class="rail__list" id="toc">
-        <a href="#references">— References</a>
-      </nav>
+      <details class="rail__toc" id="railToc" open>
+        <summary class="rail__label">CONTENTS</summary>
+        <nav class="rail__list" id="toc">
+          <a href="#references">— References</a>
+        </nav>
+      </details>
+      <script>
+        // CONTENTS sits above the article on narrow screens, so it starts collapsed
+        // there; beside the article on desktop it stays pinned open. Runs inline so
+        // the collapse happens before first paint.
+        (function () {
+          var toc = document.getElementById('railToc');
+          if (!toc || toc.hidden) return;
+          var narrow = window.matchMedia('(max-width: 860px)');
+          function sync() { toc.open = !narrow.matches; }
+          sync();
+          if (narrow.addEventListener) narrow.addEventListener('change', sync);
+          toc.querySelector('summary').addEventListener('click', function (e) {
+            if (!narrow.matches) e.preventDefault();
+          });
+        })();
+      </script>
       <div class="rail__share">SHARE&nbsp;//
         <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fapurvsinghgautam.me%2Fblog%2Fwhy-having-an-online-portfolio-is-important%2F&amp;text=Why%20Having%20an%20Online%20Portfolio%20is%20Important%3F" target="_blank" rel="noopener">X</a> &middot;
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fapurvsinghgautam.me%2Fblog%2Fwhy-having-an-online-portfolio-is-important%2F" target="_blank" rel="noopener">LI</a> &middot;
@@ -137,6 +148,23 @@
 </footer>
 
 <script>
+  // Mobile header menu. Same behaviour as the portfolio nav (assets/js/main.js),
+  // which blog pages do not load.
+  (function () {
+    var head = document.getElementById('masthead');
+    var toggle = document.getElementById('mastheadToggle');
+    var nav = document.getElementById('mastheadNav');
+    if (!head || !toggle || !nav) return;
+    function setOpen(open) {
+      head.classList.toggle('is-open', open);
+      toggle.textContent = open ? 'CLOSE ✕' : 'MENU ≡';
+      toggle.setAttribute('aria-expanded', String(open));
+    }
+    toggle.addEventListener('click', function () { setOpen(!head.classList.contains('is-open')); });
+    // Close the menu after tapping a nav link.
+    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+  })();
+
   // COPY link. Wired independently of the rail — posts with no h2 headings must
   // still get a working clipboard button.
   (function () {
