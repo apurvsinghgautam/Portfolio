@@ -1,7 +1,7 @@
 // Refresh the Google Scholar citation count shown on index.html.
-// Scholar has no API and sometimes serves a CAPTCHA to cloud IPs, so a failed
-// fetch or parse leaves the page untouched and exits 0 with a warning: the
-// star refresh in the same job must not fail because Scholar said no.
+// Run from a home machine (LifeOS workflow `portfolio-citations`), not from
+// GitHub Actions: Scholar returns 403 to cloud runners. A failed fetch or parse
+// leaves the page untouched and prints a "Citations not updated" warning.
 import { readFileSync, writeFileSync } from "node:fs";
 
 const PROFILE = "https://scholar.google.com/citations?user=KnvejewAAAAJ&hl=en";
