@@ -1,7 +1,8 @@
-name: Update star counts
+name: Update star and citation counts
 
-# Weekly refresh of the GitHub star counts on index.html. Commits only when a
-# displayed (rounded) value changes.
+# Weekly refresh of the GitHub star counts and the Google Scholar citation
+# count on index.html. Commits only when a displayed value changes. If Scholar
+# blocks the runner, the citation step warns and keeps the old number.
 on:
   schedule:
     - cron: "0 13 * * 1"
@@ -29,6 +30,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bun .github/scripts/update-stars.ts
 
+      - name: Refresh citation count
+        run: bun .github/scripts/update-citations.ts
+
       - name: Commit if changed
         run: |
           if git diff --quiet -- index.html; then
@@ -38,5 +42,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Update GitHub star counts"
+          git commit -m "Update GitHub star and citation counts"
           git push
