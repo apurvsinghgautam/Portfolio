@@ -4,7 +4,7 @@
 
 ## About
 - Name: Apurv Singh Gautam
-- Role: Threat Researcher (Security Analyst, Anti-Scraping at Meta)
+- Role: Lead, Research & Threat Intelligence at Cyble
 - Focus: Cybercrime intelligence, dark web OSINT, threat intelligence, HUMINT/SOCMINT/OSINT
 - Education: M.S. Cybersecurity, Georgia Institute of Technology; B.Tech IT, Symbiosis Institute of Technology
 - Location: USA
@@ -29,6 +29,6 @@
 ## Profiles
 - LinkedIn: https://www.linkedin.com/in/apurvsinghgautam/
 - GitHub: https://github.com/apurvsinghgautam
-- X/Twitter: https://twitter.com/ASG_Sc0rpi0n
+- X/Twitter: https://x.com/ASG_Sc0rpi0n
 - Google Scholar: https://scholar.google.com/citations?user=KnvejewAAAAJ&hl=en
 - Medium: https://medium.com/@apurvsinghgautam
